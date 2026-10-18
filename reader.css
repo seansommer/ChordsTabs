@@ -84,6 +84,23 @@
 .browse-arrow{font-size:23px;color:var(--accent)}
 #browse-status{margin-top:28px}
 .browse-note{font-size:11px;color:var(--muted);margin-top:10px}
+.browse-section-heading{flex-wrap:wrap}
+.browse-section-heading>div:first-child{flex:1 1 180px;min-width:0}
+.browse-section-controls{display:flex;align-items:center;justify-content:space-between;gap:12px;flex:1 1 240px;max-width:320px}
+.browse-section-controls .field-help{margin:0}
+.browse-view-toggle{display:inline-flex;flex-shrink:0;gap:2px;padding:3px;border:1px solid var(--line);border-radius:11px;background:var(--bg)}
+.browse-view-toggle button{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:38px;padding:6px 11px;border-radius:8px;font-size:11px;color:var(--muted)}
+.browse-view-toggle svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.6}
+.browse-view-toggle .active{color:var(--bg);background:var(--accent);font-weight:700}
+.browse-list.compact-list{display:flex;gap:0;border-top:1px solid var(--line)}
+.compact-list .artist-card{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:12px;min-height:52px;padding:11px 4px;border:0;border-bottom:1px solid var(--line);border-radius:0;background:transparent}
+.compact-list .artist-initial{display:none}.compact-list .artist-card strong{font-size:13px}.compact-list .artist-card small{margin:0;white-space:nowrap}
+.compact-list .browse-song{min-height:52px;padding:11px 4px;gap:12px;border:0;border-bottom:1px solid var(--line);border-radius:0}
+.compact-list .browse-song>span:first-child{display:flex;align-items:baseline;flex-wrap:wrap;gap:2px 12px;flex:1}
+.compact-list .browse-song strong{font-size:13px}.compact-list .browse-song small{font-size:11px;margin:0}.compact-list .browse-song-type{display:none}.compact-list .browse-arrow{font-size:18px;margin-left:auto}
+.compact-list .artist-card:hover,.compact-list .artist-card:focus-visible,.compact-list .browse-song:hover{background:var(--accent-soft)}
+.compact-list .empty-list{padding:14px 4px}
+@media(max-width:620px){.browse-section-heading{gap:12px}.browse-section-controls{max-width:none}.browse-list.compact-list .artist-card{min-height:52px;padding:11px 4px}.browse-list.compact-list .browse-song{padding:11px 4px}}
 @media(max-width:620px){
   .chords-app .header-inner{gap:10px}.app-home span{display:none}.chords-app .header-actions{gap:4px}.chords-app .icon-button{min-width:40px;min-height:42px}.chords-app .profile-button{max-width:120px}
   .chords-app .workspace{padding-left:max(17px,env(safe-area-inset-left));padding-right:max(17px,env(safe-area-inset-right))}

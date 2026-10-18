@@ -7,6 +7,7 @@ Public address after Pages deployment: https://seansommer.github.io/ChordsTabs/
 ## Included
 
 - A dedicated browse page with separate Artists, Songs, and Saved views; open an artist to see their songs.
+- A Cards / List switch across all browse sections, including an individual artist's songs. Cards preserves the original layout; List uses compact rows. The choice stays on this device across navigation and visits.
 - Compact search above the song, showing at most three matching songs and a link to all results.
 - Chords aligned above lyrics, plus a separate lyrics-only view.
 - Full-page song scrolling: the header and settings move out of view, with practice settings collapsed initially.
