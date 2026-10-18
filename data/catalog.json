@@ -1,5 +1,19 @@
 [
   {
+    "id": "lonely-tiger-lewis",
+    "title": "Lonely",
+    "artist": "Tiger Lewis",
+    "status": "Working arrangement · excerpt",
+    "tags": [
+      "chords",
+      "lyrics",
+      "capo 1",
+      "play-along",
+      "excerpt"
+    ],
+    "file": "songs/lonely-tiger-lewis.json"
+  },
+  {
     "id": "every-little-thing-8lanco",
     "title": "Every Little Thing",
     "artist": "8lanco",

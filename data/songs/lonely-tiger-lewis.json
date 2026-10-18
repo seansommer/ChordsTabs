@@ -1,0 +1,271 @@
+{
+  "schemaVersion": 1,
+  "id": "lonely-tiger-lewis",
+  "title": "Lonely",
+  "artist": "Tiger Lewis",
+  "key": "Ab",
+  "capo": 1,
+  "tuning": "Standard · E A D G B E",
+  "status": "Working arrangement · excerpt",
+  "sourceUrl": "https://youtube.com/shorts/efkothdmw6Q",
+  "tags": [
+    "chords",
+    "lyrics",
+    "capo 1",
+    "play-along",
+    "excerpt"
+  ],
+  "notes": [
+    "This chart covers the approximately 69-second performance in your uploaded screen recording. It includes only that excerpt; section names are for navigation, and no additional verses have been added.",
+    "Simplified guitar accompaniment prepared using local audio analysis. The sounding key is A♭ major. Chord voicings and their placement over the words are approximate; this is a working arrangement, not an official or note-for-note transcription.",
+    "Suggested setup: capo 1 with G, Em, C and D shapes, sounding as A♭, Fm, D♭ and E♭. In the chorus, the quicker G–D–Em–D changes form the descending run. Let the final G shape ring. The capo control can show equivalent shapes for another capo position.",
+    "Lyrics follow the captions visible in your recording, with automated speech transcription used to help locate phrases. Words masked in the captions remain masked here. You can refine any wording or chord placement from the master song editor.",
+    "The original-video button uses the YouTube link you supplied. To play along with this exact recording, select it in Play-along options; the file stays on your device. Repeat with Scroll with playback enabled restarts the chart, but the scroll speed is not automatically synchronized to individual chord changes."
+  ],
+  "provenance": {
+    "date": "2026-10-18",
+    "source": "User-uploaded screen recording; visible captions and local audio analysis",
+    "file": "ScreenRecording_10-18-2026 16-23-36_1.mp4"
+  },
+  "sections": [
+    {
+      "name": "Verse — recorded excerpt",
+      "lines": [
+        {
+          "lyrics": "I would rather be answering to me",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "G"
+            }
+          ]
+        },
+        {
+          "lyrics": "Take myself to eat",
+          "chords": []
+        },
+        {
+          "lyrics": "I would rather go solo to parties",
+          "chords": [
+            {
+              "at": 18,
+              "chord": "Em"
+            }
+          ]
+        },
+        {
+          "lyrics": "Don't need to roll deep",
+          "chords": []
+        },
+        {
+          "lyrics": "Share half of my w**d",
+          "chords": []
+        },
+        {
+          "lyrics": "Don't need nobody ",
+          "chords": [
+            {
+              "at": 18,
+              "chord": "C"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Verse continued",
+      "lines": [
+        {
+          "lyrics": "I would rather sleep in an empty bed",
+          "chords": [
+            {
+              "at": 15,
+              "chord": "G"
+            }
+          ]
+        },
+        {
+          "lyrics": "Missing you to death",
+          "chords": []
+        },
+        {
+          "lyrics": "Dream about your s*x",
+          "chords": []
+        },
+        {
+          "lyrics": "I miss you so bad",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Em"
+            }
+          ]
+        },
+        {
+          "lyrics": "Don't wanna be sad",
+          "chords": []
+        },
+        {
+          "lyrics": "There's something we had",
+          "chords": []
+        },
+        {
+          "lyrics": "But I don't want it back, 'cause",
+          "chords": [
+            {
+              "at": 20,
+              "chord": "D"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Chorus — recorded excerpt",
+      "lines": [
+        {
+          "lyrics": "I was yours and you were mine",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "C"
+            },
+            {
+              "at": 16,
+              "chord": "D"
+            }
+          ]
+        },
+        {
+          "lyrics": "But now I'm just a lonely guy ",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "G"
+            },
+            {
+              "at": 8,
+              "chord": "D"
+            },
+            {
+              "at": 19,
+              "chord": "Em"
+            },
+            {
+              "at": 30,
+              "chord": "D"
+            }
+          ]
+        },
+        {
+          "lyrics": "I was stupid, I was 17",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "C"
+            },
+            {
+              "at": 20,
+              "chord": "D"
+            }
+          ]
+        },
+        {
+          "lyrics": "Tryna figure out what true love means",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "G"
+            },
+            {
+              "at": 6,
+              "chord": "D"
+            },
+            {
+              "at": 22,
+              "chord": "Em"
+            },
+            {
+              "at": 32,
+              "chord": "D"
+            }
+          ]
+        },
+        {
+          "lyrics": "Misery loves company",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "C"
+            },
+            {
+              "at": 13,
+              "chord": "D"
+            }
+          ]
+        },
+        {
+          "lyrics": "But after everything you done to me",
+          "chords": [
+            {
+              "at": 4,
+              "chord": "G"
+            },
+            {
+              "at": 10,
+              "chord": "D"
+            },
+            {
+              "at": 25,
+              "chord": "Em"
+            },
+            {
+              "at": 33,
+              "chord": "D"
+            }
+          ]
+        },
+        {
+          "lyrics": "I would rather be alone tonight",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "C"
+            },
+            {
+              "at": 24,
+              "chord": "D"
+            }
+          ]
+        },
+        {
+          "lyrics": "I would rather be a lone, lonely guy",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "C"
+            },
+            {
+              "at": 20,
+              "chord": "D"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ending — let ring",
+      "lines": [
+        {
+          "lyrics": "",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "G"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
