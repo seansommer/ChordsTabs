@@ -8,8 +8,6 @@ export function initialScrollSpeed(value,legacy){return scrollSpeed(value,scroll
 export class AutoScroller {
   constructor(target,onChange=()=>{},bounds=()=>({})){
     this.target=target;this.onChange=onChange;this.bounds=bounds;this.speed=SCROLL_DEFAULT;this.active=false;this.tick=this.tick.bind(this);
-    const interrupt=event=>{if(event.target?.closest?.('[data-scroll-control]'))return;this.stop('interaction');};
-    for(const event of ['wheel','touchstart','pointerdown','keydown'])document.addEventListener(event,interrupt,{passive:true});
     document.addEventListener('visibilitychange',()=>{if(document.hidden)this.stop();});
     globalThis.addEventListener?.('pagehide',()=>this.stop());
   }
@@ -23,14 +21,17 @@ export class AutoScroller {
     const {start,end}=this.range();if(end<=start+1)return false;
     this.position=this.target.scrollTop;
     if(this.position<start||this.position>=end-1)this.position=start;
-    this.target.scrollTop=this.position;this.active=true;this.previous=null;this.onChange(true);this.frame=requestAnimationFrame(this.tick);return true;
+    this.target.scrollTop=this.position;this.lastWritten=this.target.scrollTop;this.active=true;this.previous=null;this.onChange(true);this.frame=requestAnimationFrame(this.tick);return true;
   }
   restart(){this.stop('restart');this.target.scrollTop=this.range().start;return this.start();}
   stop(reason='pause'){if(!this.active)return;this.active=false;cancelAnimationFrame(this.frame);this.onChange(false,reason);}
   tick(time){
     if(!this.active)return;
     const {end}=this.range();
-    if(this.previous!==null){this.position=Math.min(end,this.position+Math.min(time-this.previous,100)/1000*this.speed);this.target.scrollTop=this.position;}
+    // Follow a manual swipe or keyboard scroll without cancelling auto-scroll.
+    // Keep fractional progress separate from the browser's rounded scrollTop.
+    if(Math.abs(this.target.scrollTop-this.lastWritten)>1)this.position=this.target.scrollTop;
+    if(this.previous!==null){this.position=Math.min(end,this.position+Math.min(time-this.previous,100)/1000*this.speed);this.target.scrollTop=this.position;this.lastWritten=this.target.scrollTop;}
     this.previous=time;
     if(this.position>=end-.5){this.stop('end');return;}
     this.frame=requestAnimationFrame(this.tick);

@@ -1,0 +1,708 @@
+{
+  "schemaVersion": 1,
+  "id": "every-little-thing-8lanco",
+  "title": "Every Little Thing",
+  "artist": "8lanco",
+  "key": "Bb",
+  "capo": 3,
+  "tuning": "Standard · E A D G B E",
+  "status": "Working arrangement",
+  "sourceUrl": "https://youtu.be/LHJPaRKzWHk",
+  "tags": [
+    "chords",
+    "lyrics",
+    "capo 3",
+    "play-along"
+  ],
+  "notes": [
+    "Working guitar accompaniment prepared from your uploaded screen recording. The chord changes and their placement are approximate, including the repeated chorus pickups and instrumental outro; this is not an official transcription.",
+    "Capo 3 is the suggested guitar arrangement. The written shapes are Em, Am/Am7, D/D7, G, C, A/A7 and B7. They sound in the B♭ major / G minor family. Changing the capo control automatically changes the shapes while retaining the sounding key.",
+    "Lyrics follow the fan transcription visible in your recording, with automated speech transcription used to check the section order. [Must?] in Verse 2 marks uncertain wording. Review the lyrics and chord placement against the original before treating this as a finished chart.",
+    "Common shapes, low E to high e, relative to capo 3: Em 022000 · Am x02210 · Am7 x02010 · D xx0232 · D7 xx0212 · G 320003 · C x32010 · A x02220 · A7 x02020 · B7 x21202. Em7 022030 is an optional color used in the chart.",
+    "Use the linked YouTube video to watch or play along when embedding is available. You can also select your screen recording in Play-along options for local audio. Repeat with Scroll with playback enabled restarts the chart; chord changes are not automatically synchronized to the recording."
+  ],
+  "provenance": {
+    "date": "2026-10-18",
+    "source": "User-uploaded screen recording; visible lyric transcription and local audio analysis",
+    "file": "ScreenRecording_10-18-2026 14-55-36_1.mp4"
+  },
+  "sections": [
+    {
+      "name": "Verse 1",
+      "lines": [
+        {
+          "lyrics": "Her mother's on the phone",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Em"
+            }
+          ]
+        },
+        {
+          "lyrics": "Tell her come home, my dear",
+          "chords": [
+            {
+              "at": 9,
+              "chord": "Am7"
+            }
+          ]
+        },
+        {
+          "lyrics": "In that moment, a smile comes to her face",
+          "chords": [
+            {
+              "at": 8,
+              "chord": "D7"
+            },
+            {
+              "at": 24,
+              "chord": "G"
+            }
+          ]
+        },
+        {
+          "lyrics": "What mother doesn't know",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "D"
+            },
+            {
+              "at": 20,
+              "chord": "Em7"
+            }
+          ]
+        },
+        {
+          "lyrics": "Is that she's doing fine right here",
+          "chords": [
+            {
+              "at": 14,
+              "chord": "A7"
+            }
+          ]
+        },
+        {
+          "lyrics": "In her eyes, she's found her place",
+          "chords": [
+            {
+              "at": 7,
+              "chord": "D7"
+            },
+            {
+              "at": 19,
+              "chord": "G"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pre-Chorus 1",
+      "lines": [
+        {
+          "lyrics": "She thinks I love",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "G"
+            },
+            {
+              "at": 11,
+              "chord": "A"
+            },
+            {
+              "at": 13,
+              "chord": "B7"
+            }
+          ]
+        },
+        {
+          "lyrics": "Every little thing about her",
+          "chords": [
+            {
+              "at": 13,
+              "chord": "Em"
+            }
+          ]
+        },
+        {
+          "lyrics": "She's all alone as she tells herself",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Am"
+            },
+            {
+              "at": 23,
+              "chord": "D"
+            }
+          ]
+        },
+        {
+          "lyrics": "That I never wanna live without her",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "B7"
+            },
+            {
+              "at": 19,
+              "chord": "Em"
+            }
+          ]
+        },
+        {
+          "lyrics": "She don't wanna know",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Am"
+            },
+            {
+              "at": 16,
+              "chord": "D"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Chorus 1",
+      "lines": [
+        {
+          "lyrics": "I'll never catch a grenade if it's aiming for you",
+          "chords": [
+            {
+              "at": 11,
+              "chord": "G"
+            },
+            {
+              "at": 19,
+              "chord": "B7"
+            },
+            {
+              "at": 35,
+              "chord": "Em"
+            },
+            {
+              "at": 46,
+              "chord": "C"
+            }
+          ]
+        },
+        {
+          "lyrics": "Or throw my hand on a blade, what a strange thing to do",
+          "chords": [
+            {
+              "at": 12,
+              "chord": "G"
+            },
+            {
+              "at": 22,
+              "chord": "B7"
+            },
+            {
+              "at": 36,
+              "chord": "Em"
+            },
+            {
+              "at": 53,
+              "chord": "C"
+            }
+          ]
+        },
+        {
+          "lyrics": "I'd jump in front of a train",
+          "chords": [
+            {
+              "at": 12,
+              "chord": "G"
+            },
+            {
+              "at": 23,
+              "chord": "A7"
+            }
+          ]
+        },
+        {
+          "lyrics": "If the train didn't move",
+          "chords": [
+            {
+              "at": 7,
+              "chord": "C"
+            },
+            {
+              "at": 20,
+              "chord": "D"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Turnaround",
+      "lines": [
+        {
+          "lyrics": "            ",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Em"
+            },
+            {
+              "at": 4,
+              "chord": "Am"
+            },
+            {
+              "at": 8,
+              "chord": "D"
+            },
+            {
+              "at": 12,
+              "chord": "G"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Verse 2",
+      "lines": [
+        {
+          "lyrics": "I am cold, I am colder than ice",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Am7"
+            },
+            {
+              "at": 16,
+              "chord": "D7"
+            }
+          ]
+        },
+        {
+          "lyrics": "When I see those little tears run from her eyes",
+          "chords": [
+            {
+              "at": 7,
+              "chord": "G"
+            },
+            {
+              "at": 43,
+              "chord": "Em7"
+            }
+          ]
+        },
+        {
+          "lyrics": "She would bleed ",
+          "chords": [
+            {
+              "at": 10,
+              "chord": "A7"
+            },
+            {
+              "at": 16,
+              "chord": "Am"
+            }
+          ]
+        },
+        {
+          "lyrics": "[Must?] bleed for me",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "D"
+            }
+          ]
+        },
+        {
+          "lyrics": "Yes, bleed for me while I...",
+          "chords": [
+            {
+              "at": 5,
+              "chord": "G"
+            },
+            {
+              "at": 24,
+              "chord": "B7"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Chorus 2",
+      "lines": [
+        {
+          "lyrics": "I'll never catch a grenade if it's aiming for you",
+          "chords": [
+            {
+              "at": 11,
+              "chord": "G"
+            },
+            {
+              "at": 19,
+              "chord": "B7"
+            },
+            {
+              "at": 35,
+              "chord": "Em"
+            },
+            {
+              "at": 46,
+              "chord": "C"
+            }
+          ]
+        },
+        {
+          "lyrics": "Or throw my hand on a blade, what a strange thing to do",
+          "chords": [
+            {
+              "at": 12,
+              "chord": "G"
+            },
+            {
+              "at": 22,
+              "chord": "B7"
+            },
+            {
+              "at": 36,
+              "chord": "Em"
+            },
+            {
+              "at": 53,
+              "chord": "C"
+            }
+          ]
+        },
+        {
+          "lyrics": "I'd jump in front of a train",
+          "chords": [
+            {
+              "at": 12,
+              "chord": "G"
+            },
+            {
+              "at": 23,
+              "chord": "A7"
+            }
+          ]
+        },
+        {
+          "lyrics": "If the train didn't move",
+          "chords": [
+            {
+              "at": 7,
+              "chord": "C"
+            },
+            {
+              "at": 20,
+              "chord": "D"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pre-Chorus 2",
+      "lines": [
+        {
+          "lyrics": "Every little thing about her",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "B7"
+            },
+            {
+              "at": 13,
+              "chord": "Em7"
+            }
+          ]
+        },
+        {
+          "lyrics": "She's all alone as she tells herself",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Am7"
+            },
+            {
+              "at": 23,
+              "chord": "D"
+            }
+          ]
+        },
+        {
+          "lyrics": "That I never wanna live without her",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "B7"
+            },
+            {
+              "at": 19,
+              "chord": "Em"
+            }
+          ]
+        },
+        {
+          "lyrics": "She don't wanna know",
+          "chords": [
+            {
+              "at": 16,
+              "chord": "A7"
+            }
+          ]
+        },
+        {
+          "lyrics": "She don't wanna know",
+          "chords": [
+            {
+              "at": 16,
+              "chord": "D"
+            }
+          ]
+        },
+        {
+          "lyrics": "She don't wanna know",
+          "chords": [
+            {
+              "at": 16,
+              "chord": "G"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Chorus 3",
+      "lines": [
+        {
+          "lyrics": "I'll never catch a grenade if it's aiming for you",
+          "chords": [
+            {
+              "at": 11,
+              "chord": "G"
+            },
+            {
+              "at": 19,
+              "chord": "B7"
+            },
+            {
+              "at": 35,
+              "chord": "Em"
+            },
+            {
+              "at": 46,
+              "chord": "C"
+            }
+          ]
+        },
+        {
+          "lyrics": "Or throw my hand on a blade, what a strange thing to do",
+          "chords": [
+            {
+              "at": 12,
+              "chord": "G"
+            },
+            {
+              "at": 22,
+              "chord": "B7"
+            },
+            {
+              "at": 36,
+              "chord": "Em"
+            },
+            {
+              "at": 53,
+              "chord": "C"
+            }
+          ]
+        },
+        {
+          "lyrics": "I'd jump in front of a, ooh",
+          "chords": [
+            {
+              "at": 12,
+              "chord": "G"
+            },
+            {
+              "at": 24,
+              "chord": "A7"
+            }
+          ]
+        },
+        {
+          "lyrics": "I'd jump in front of a, oh",
+          "chords": [
+            {
+              "at": 12,
+              "chord": "C"
+            },
+            {
+              "at": 24,
+              "chord": "D"
+            }
+          ]
+        },
+        {
+          "lyrics": "I'd jump in front of a train, if the train didn't move",
+          "chords": [
+            {
+              "at": 12,
+              "chord": "G"
+            },
+            {
+              "at": 50,
+              "chord": "B7"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Final Chorus",
+      "lines": [
+        {
+          "lyrics": "I'll never catch a grenade if it's aiming for you",
+          "chords": [
+            {
+              "at": 11,
+              "chord": "G"
+            },
+            {
+              "at": 19,
+              "chord": "B7"
+            },
+            {
+              "at": 35,
+              "chord": "Em"
+            },
+            {
+              "at": 46,
+              "chord": "C"
+            }
+          ]
+        },
+        {
+          "lyrics": "Or throw my hand on a blade, what a strange thing to do",
+          "chords": [
+            {
+              "at": 12,
+              "chord": "G"
+            },
+            {
+              "at": 22,
+              "chord": "B7"
+            },
+            {
+              "at": 36,
+              "chord": "Em"
+            },
+            {
+              "at": 53,
+              "chord": "C"
+            }
+          ]
+        },
+        {
+          "lyrics": "I'd jump in front of a train",
+          "chords": [
+            {
+              "at": 12,
+              "chord": "G"
+            },
+            {
+              "at": 23,
+              "chord": "A7"
+            }
+          ]
+        },
+        {
+          "lyrics": "If the train didn't move",
+          "chords": [
+            {
+              "at": 7,
+              "chord": "C"
+            },
+            {
+              "at": 20,
+              "chord": "D"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Instrumental Outro",
+      "lines": [
+        {
+          "lyrics": "            ",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Em"
+            },
+            {
+              "at": 4,
+              "chord": "Am"
+            },
+            {
+              "at": 8,
+              "chord": "D"
+            },
+            {
+              "at": 12,
+              "chord": "G"
+            }
+          ]
+        },
+        {
+          "lyrics": "            ",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Em"
+            },
+            {
+              "at": 4,
+              "chord": "Am"
+            },
+            {
+              "at": 8,
+              "chord": "D"
+            },
+            {
+              "at": 12,
+              "chord": "G"
+            }
+          ]
+        },
+        {
+          "lyrics": "            ",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Em"
+            },
+            {
+              "at": 4,
+              "chord": "Am"
+            },
+            {
+              "at": 8,
+              "chord": "D"
+            },
+            {
+              "at": 12,
+              "chord": "G"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

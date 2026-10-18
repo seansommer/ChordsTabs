@@ -1,5 +1,18 @@
 [
   {
+    "id": "every-little-thing-8lanco",
+    "title": "Every Little Thing",
+    "artist": "8lanco",
+    "status": "Working arrangement",
+    "tags": [
+      "chords",
+      "lyrics",
+      "capo 3",
+      "play-along"
+    ],
+    "file": "songs/every-little-thing-8lanco.json"
+  },
+  {
     "id": "tired-slow-leaves",
     "title": "Tired",
     "artist": "Slow Leaves",

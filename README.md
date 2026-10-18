@@ -10,7 +10,7 @@ Public address after Pages deployment: https://seansommer.github.io/ChordsTabs/
 - Compact search above the song, showing at most three matching songs and a link to all results.
 - Chords aligned above lyrics, plus a separate lyrics-only view.
 - Full-page song scrolling: the header and settings move out of view, with practice settings collapsed initially.
-- Adjustable automatic scrolling at 2.5–45 px/s (half the original range), tap-to-pause, manual-scroll interruption, and return to top. Existing speed preferences are halved once when migrating to the new range.
+- Adjustable automatic scrolling at 2.5–45 px/s (half the original range), with a compact pause/resume/remove bar and synchronized speed controls. Taps and manual swipes keep scrolling active. Existing speed preferences are halved once when migrating to the new range.
 - Font sizes from 14 to 36 px.
 - Independent semitone transposition and capo controls, with sounding-key and chord-shape-key labels.
 - Sharp/flat spelling, slash-bass transposition, and numeric guitar-tab transposition.
@@ -19,7 +19,7 @@ Public address after Pages deployment: https://seansommer.github.io/ChordsTabs/
 - Shared Music Center accounts, musician cards, and private messages, configured for the `music-center-1111` Firebase project.
 - Master-only song editor with bracketed chord notation, preview, live publishing, conflict checks, previous-version recovery, JSON export, and new-song creation.
 
-The first song is **Tired — Slow Leaves**, carried over from the uploaded-performance working chart. Approximate chords and both uncertain lyric phrases remain marked. **Evening Sketch** is a separate original instrumental exercise for trying the tab controls, not an artist transcription.
+The songbook includes **Every Little Thing — 8lanco**, a capo-3 working accompaniment prepared from the uploaded screen recording, and **Tired — Slow Leaves**, carried over from the uploaded-performance working chart. Approximate chords and uncertain lyric phrases remain marked. **Evening Sketch** is a separate original instrumental exercise for trying the tab controls, not an artist transcription.
 
 Music Center opens the app in a full-viewport player, keeping navigation inside the installed hub. The record icon returns to Music Center. Direct song links and the separate Chords & Tabs home-screen app remain supported. Ordinary browser tabs still have browser-controlled address bars.
 
@@ -85,8 +85,12 @@ Open your account card → **Master song manager** from Music Center, the reader
 
 Use **Play audio** for a direct audio link or a recording selected from your device. Files are session-local object URLs; they are never uploaded or stored in the database. The master editor has an optional direct HTTPS audio/video file URL (MP3, M4A, MP4, and other supported media formats). File playback depends on the browser's codecs and the source host's availability.
 
-**Repeat song** restarts the recording. With **Scroll with playback** enabled, the chart returns to the top when playback actually resumes, then uses the selected scroll speed. Pauses/buffering stop the scroll; tapping the chart suspends linked scrolling. Restart can be used manually. This is not chord-level timing synchronization. Keep the app open; playback pauses when the page is hidden, and leaving/switching songs stops it.
+**Repeat song** restarts the recording. With **Scroll with playback** enabled, the chart returns to the top when playback actually resumes, then uses the selected scroll speed. Pauses/buffering stop linked scrolling. Tapping the chart, adjusting speed, changing view or practice settings, and manual swipes keep auto-scroll active. Pause Auto Scroll suspends linked scrolling without stopping the recording; Start Auto Scroll enables it again. Restart can be used manually. This is not chord-level timing synchronization. Keep the app open; playback pauses when the page is hidden, and leaving/switching songs stops it.
 
 YouTube and Vimeo use their official player APIs in a visible player and support repeat/scroll restart when embedding is allowed. YouTube is never hidden or reduced to audio. Instagram embeds remain available in Watch here, but are not used for automatic play/repeat because they do not provide the control/event interface used by this feature. For Instagram practice, choose an audio file or your screen recording. Unsupported, private, or blocked videos show a fallback message. Browser autoplay may require another tap on Play or the embedded player.
 
 Reference APIs: https://developers.google.com/youtube/iframe_api_reference · https://developers.google.com/youtube/terms/developer-policies · https://github.com/vimeo/player.js · https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/ended_event
+
+## Compact auto-scroll controls
+
+Starting auto-scroll reveals a slim bottom bar with **Pause Auto Scroll**. When paused, it shows **Start Auto Scroll** and **Remove Auto Scroll**. Remove stops scrolling and hides the bar until scrolling is explicitly activated again. A slider and − / + buttons adjust the saved speed in 0.5 px/s steps; the practice-settings slider stays in sync. Ordinary taps, clicks, and keys do not cancel scrolling. Manual scrolling changes the current position without jumping back. The bar stays out of printed charts, and the visible video player sits above it. Song changes reset the bar; reaching the chart end or hiding the page pauses scrolling.

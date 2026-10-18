@@ -134,7 +134,8 @@ export function initPlayback({scroller,beforeScroll}){
     stop();if(objectUrl)URL.revokeObjectURL(objectUrl);objectUrl=null;fileName='';song=next;follow=true;$('#playback-file').value='';$('#use-song-audio').hidden=true;panel.open=false;describe();controls();
   }
   function suspendScroll(){follow=false;$('#scroll-with-audio').checked=false;}
+  function enableScroll(){follow=true;$('#scroll-with-audio').checked=true;}
   document.addEventListener('visibilitychange',()=>{if(document.hidden){loop?.cancel();try{Promise.resolve(adapter?.pause?.()).catch(()=>{});}catch{}scroller.stop('media');}});
   window.addEventListener('pagehide',stop);
-  controls();return {setSong,stop,suspendScroll,hasVideo:()=>!dock.hidden,videoHeight:()=>dock.hidden?0:dock.offsetHeight+16};
+  controls();return {setSong,stop,suspendScroll,enableScroll,hasVideo:()=>!dock.hidden,videoHeight:()=>dock.hidden?0:dock.offsetHeight+16};
 }

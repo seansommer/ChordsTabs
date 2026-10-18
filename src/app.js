@@ -3,24 +3,22 @@ import {searchSongs,transposeNote,mediaSource} from './music.js';
 import {quickMatches} from './catalog-view.js';
 import {Songbook} from './songbook.js';
 import {renderSheet} from './render.js';
-import {AutoScroller,scrollSpeed,initialScrollSpeed} from './scroll.js';
+import {AutoScroller,initialScrollSpeed} from './scroll.js';
+import {initScrollControls} from './scroll-controls.js';
 import {initEditor} from './editor.js';
 import {initPlayback} from './playback.js';
 
 initShell('chords');
 const book=new Songbook(community),page=document.scrollingElement,sheet=$('#sheet');
-let current=null,settings={},currentSignature='',pendingId=new URL(location.href).searchParams.get('song'),playback=null;
+let current=null,settings={},currentSignature='',pendingId=new URL(location.href).searchParams.get('song'),playback=null,scrollControls=null;
 let lyricsOnly=new URL(location.href).searchParams.get('view')==='lyrics';
 const storedFavorites=readStore('music-center.saved-songs.v1',[]);
 const favorites=new Set(Array.isArray(storedFavorites)?storedFavorites.filter(s=>typeof s==='string'):[]);
 const clamp=(n,min,max,def)=>Number.isFinite(Number(n))?Math.max(min,Math.min(max,Math.round(Number(n)))):def;
 const sheetTop=()=>sheet.getBoundingClientRect().top+page.scrollTop;
-const scroller=new AutoScroller(page,(active,reason)=>{
-  if(reason==='interaction')playback?.suspendScroll();
-  $('#scroll-toggle').textContent=active?'Ⅱ Pause':'▶ Auto-scroll';$('#scroll-toggle').setAttribute('aria-pressed',String(active));
-  $('#scroll-help').textContent=active?'Scrolling · tap anywhere on the page to pause.':'Tap the page to pause scrolling.';
-},()=>({start:Math.max(0,sheetTop()-18),end:sheetTop()+sheet.offsetHeight-page.clientHeight+18+(playback?.videoHeight()||0)}));
+const scroller=new AutoScroller(page,active=>scrollControls?.setActive(active),()=>({start:Math.max(0,sheetTop()-18),end:sheetTop()+sheet.offsetHeight-page.clientHeight+18+(playback?.videoHeight()||0)+(scrollControls?.height()||0)}));
 playback=initPlayback({scroller,beforeScroll:()=>{$('#practice-settings').open=false;$('#playback-panel').open=false;}});
+scrollControls=initScrollControls({scroller,initialSpeed:initialScrollSpeed(readStore('music-center.scroll-speed.v2',null),readStore('music-center.scroll-speed',null)),saveSpeed:speed=>writeStore('music-center.scroll-speed.v2',speed),beforeStart:()=>{$('#practice-settings').open=false;},onManualPause:()=>playback.suspendScroll(),onManualStart:()=>playback.enableScroll(),onCannotStart:()=>notify('This song fits on screen. Increase text size for a closer view.')});
 
 function hideSearch(){$('#search-results').hidden=true;$('#song-search').setAttribute('aria-expanded','false');}
 function renderSearch(){
@@ -39,7 +37,7 @@ function renderSearch(){
   $('#search-results').hidden=false;$('#song-search').setAttribute('aria-expanded','true');
 }
 $('#song-search').oninput=renderSearch;
-$('#song-search').onfocus=()=>{scroller.stop();renderSearch();};
+$('#song-search').onfocus=renderSearch;
 $('#quick-search').addEventListener('keydown',event=>{
   if(event.key==='Escape'){$('#song-search').focus();hideSearch();return;}
   if(!['ArrowDown','ArrowUp'].includes(event.key))return;
@@ -58,7 +56,7 @@ function syncUrl(push=false){
 function updateFavorite(){const saved=favorites.has(current.id);$('#favorite-button').textContent=saved?'★ Saved':'☆ Save';$('#favorite-button').setAttribute('aria-pressed',String(saved));}
 function openSong(id,{navigate=false,preserve=false}={}){
   const song=book.get(id);if(!song)return;
-  scroller.stop();current=song;currentSignature=JSON.stringify(song);
+  scrollControls.reset();current=song;currentSignature=JSON.stringify(song);
   playback.setSong(song);
   const stored=readStore('music-center.song-settings.'+id,{});
   settings={transpose:clamp(stored?.transpose,-12,12,0),capo:clamp(stored?.capo,0,12,song.capo),font:clamp(readStore('music-center.song-font',20),14,36,20),flats:typeof stored?.flats==='boolean'?stored.flats:/b/.test(song.key)};
@@ -71,7 +69,7 @@ function openSong(id,{navigate=false,preserve=false}={}){
   if(navigate){$('#practice-settings').open=false;page.scrollTop=0;}
 }
 function updateControls(preserve=true){
-  if(!current)return;scroller.stop();const oldScroll=page.scrollTop,oldTop=sheetTop(),inside=preserve&&oldScroll>oldTop;
+  if(!current)return;const oldScroll=page.scrollTop,oldTop=sheetTop(),inside=preserve&&oldScroll>oldTop;
   const progress=inside?(oldScroll-oldTop)/Math.max(1,sheet.offsetHeight):0;
   $('#transpose-value').textContent=settings.transpose>0?'+'+settings.transpose:String(settings.transpose);$('#capo').value=String(settings.capo);$('#font-value').textContent=String(settings.font);$('#prefer-flats').checked=settings.flats;
   $('#transpose-down').disabled=settings.transpose<=-12;$('#transpose-up').disabled=settings.transpose>=12;$('#font-down').disabled=settings.font<=14;$('#font-up').disabled=settings.font>=36;
@@ -88,14 +86,6 @@ for(const [id,key,delta,min,max] of [['transpose-down','transpose',-1,-12,12],['
 $('#capo').onchange=()=>{settings.capo=Number($('#capo').value);updateControls();};$('#prefer-flats').onchange=()=>{settings.flats=$('#prefer-flats').checked;updateControls();};
 $('#reset-controls').onclick=()=>{settings={transpose:0,capo:current.capo,font:20,flats:/b/.test(current.key)};updateControls();};
 $('#chords-view').onclick=()=>{lyricsOnly=false;updateControls();syncUrl();};$('#lyrics-view').onclick=()=>{lyricsOnly=true;updateControls();syncUrl();};
-$('#practice-settings').addEventListener('toggle',()=>{if($('#practice-settings').open)scroller.stop();});
-$('#scroll-toggle').onclick=()=>{
-  if(scroller.active){scroller.stop();playback.suspendScroll();return;}
-  $('#practice-settings').open=false;
-  if(!scroller.start())notify('This song fits on screen. Increase text size for a closer view.');
-};
-$('#scroll-speed').value=String(initialScrollSpeed(readStore('music-center.scroll-speed.v2',null),readStore('music-center.scroll-speed',null)));
-$('#scroll-speed').oninput=()=>{scroller.speed=scrollSpeed($('#scroll-speed').value);$('#speed-value').textContent=scroller.speed+' px/s';writeStore('music-center.scroll-speed.v2',scroller.speed);};$('#scroll-speed').oninput();
 $('#back-to-top').onclick=()=>{scroller.stop();page.scrollTop=0;};
 $('#share-song').onclick=()=>share(`${current.title} — ${current.artist}`,location.href);$('#print-song').onclick=()=>{scroller.stop();window.print();};
 $('#source-button').onclick=()=>{const source=mediaSource(current.sourceUrl);if(!source)return;playback.stop();scroller.stop();$('#source-title').textContent=current.title+' · '+current.artist;$('#source-link').href=source.url;$('#load-video').hidden=!source.embed;$('#video-area').replaceChildren();$('#video-area').classList.toggle('instagram',source.kind==='instagram');$('#source-dialog').showModal();};
@@ -104,7 +94,7 @@ $('#source-dialog').addEventListener('close',()=>$('#video-area').replaceChildre
 initEditor({getCurrent:()=>current,getRecord:id=>book.records[id],hasSong:id=>book.has(id),onPublish:(song,record)=>{book.accept(song,record);openSong(song.id,{navigate:true});}});
 
 function refreshSongs(){
-  if(current&&!book.get(current.id)){playback.setSong(null);scroller.stop();current=null;currentSignature='';$('#reader-content').hidden=true;$('#reader-loading').hidden=false;$('#reader-loading').textContent='This song has been deleted. Browse the songbook or add a song from your master menu.';notify('This song has been removed from the songbook.');}
+  if(current&&!book.get(current.id)){playback.setSong(null);scrollControls.reset();current=null;currentSignature='';$('#reader-content').hidden=true;$('#reader-loading').hidden=false;$('#reader-loading').textContent='This song has been deleted. Browse the songbook or add a song from your master menu.';notify('This song has been removed from the songbook.');}
   if(book.liveReady&&!book.songs.length){$('#reader-content').hidden=true;$('#reader-loading').hidden=false;$('#reader-loading').textContent='Your songbook is empty. Add or restore songs from your account’s Master song manager.';hideSearch();return;}
   if(!$('#search-results').hidden)renderSearch();
   if(pendingId&&book.get(pendingId)){const id=pendingId;pendingId=null;openSong(id);return;}
