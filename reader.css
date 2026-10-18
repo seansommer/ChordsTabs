@@ -1,0 +1,98 @@
+/* The song uses the whole document: no fixed header, toolbar, or inner scroller. */
+.chords-app{background:var(--paper)}
+.chords-app .site-header{position:static;padding:6px max(16px,env(safe-area-inset-right)) 6px max(16px,env(safe-area-inset-left));background:var(--paper);z-index:auto}
+.chords-app .header-inner{max-width:1000px;min-height:44px;gap:12px}
+.chords-app .brand img{width:34px;height:34px;border-radius:10px}
+.app-home{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:650;white-space:nowrap}
+.app-home img{border-radius:10px;flex-shrink:0}
+.chords-app .header-actions{gap:3px}
+.chords-app .workspace{display:block;max-width:960px;min-height:0;padding:0 max(24px,env(safe-area-inset-right)) 24px max(24px,env(safe-area-inset-left));margin:auto}
+.song-finder{display:flex;gap:12px;align-items:center;padding:16px 0 19px}
+.quick-search{position:relative;flex:1;min-width:0}
+.chords-app .search-field input{font-size:16px;min-height:44px;padding:8px 10px 8px 0}
+.search-field{background:var(--bg)}
+.browse-link{display:flex;gap:8px;align-items:center;min-height:44px;font-size:12px;font-weight:650;color:var(--accent);padding:6px 3px}
+.search-results{position:absolute;top:calc(100% + 7px);left:0;right:0;z-index:15;padding:9px;background:var(--paper);border:1px solid var(--line);border-radius:13px;box-shadow:0 12px 40px #0002}
+.search-results>.field-help{padding:0 9px;margin:3px 0}
+.search-results ul{list-style:none;padding:0;margin:0}
+.search-match{display:block;width:100%;text-align:left;padding:10px;border-radius:8px;min-height:57px}
+.search-match:hover,.search-match:focus-visible{background:var(--accent-soft)}
+.search-match strong{display:block;font-size:13px;overflow-wrap:anywhere}
+.search-match span{display:block;font-size:11px;color:var(--muted);margin-top:2px}
+.search-results>a{display:flex;align-items:center}
+.chords-app .reader-panel{padding:0;background:transparent}
+.chords-app .song-heading{display:flex;align-items:flex-start;gap:15px;margin:0 0 17px}
+.chords-app .song-heading h1{font-size:clamp(32px,5vw,45px);margin:6px 0 8px;overflow-wrap:anywhere}
+.chords-app .song-heading .eyebrow{font-size:10px}
+.chords-app .song-meta{font-size:11px}
+.chords-app .song-actions{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;margin:0 0 0 auto;gap:0;max-width:310px}
+.song-actions .text-button{font-size:11px;white-space:nowrap}
+.practice-actions{display:flex;gap:10px;align-items:flex-start;flex-wrap:wrap}
+.practice-settings{flex:1;min-width:0;border:1px solid var(--line);border-radius:10px;background:var(--bg)}
+.practice-settings>summary{list-style:none;display:flex;align-items:center;gap:10px;min-height:44px;padding:8px 12px;cursor:pointer;font-size:12px;font-weight:650}
+.practice-settings>summary::-webkit-details-marker{display:none}
+.settings-summary{margin-left:auto;font-size:10px;font-weight:400;color:var(--muted);white-space:nowrap}
+.settings-chevron{font-size:20px;line-height:1;transition:transform .15s}
+.practice-settings[open] .settings-chevron{transform:rotate(180deg)}
+.practice-settings[open]{flex-basis:100%}
+.chords-app .practice-toolbar{gap:15px;padding:12px;position:static;border-bottom:0}
+.chords-app .practice-toolbar .view-toggle{flex-basis:100%;width:100%;margin:0}
+.practice-toolbar .view-toggle button{flex:1}
+.chords-app .stepper,.chords-app .tool-control select{height:40px;background:var(--paper)}
+.chords-app .stepper button{min-width:40px;min-height:40px}
+.chords-app .tool-control select{font-size:16px;padding:4px 7px}
+.chords-app .key-summary{padding:0 12px 8px;margin:0;gap:10px;flex-wrap:wrap;font-size:11px}
+.scroll-settings{display:flex;gap:12px;align-items:center;flex-wrap:wrap;border-top:1px solid var(--line);padding:12px}
+.scroll-settings label{font-size:11px}
+.scroll-settings input{flex:1;min-width:90px;min-height:28px;max-width:330px}
+.scroll-settings output{font-size:11px;min-width:48px;color:var(--muted);font-variant-numeric:tabular-nums}
+#scroll-toggle{min-height:46px;min-width:123px}
+.practice-hint{font-size:10px;color:var(--muted);text-align:right;margin:5px 0 4px}
+.chords-app .song-sheet{height:auto;min-height:0;max-height:none;overflow:visible;overscroll-behavior:auto;scrollbar-gutter:auto;padding:24px 0 20px;font-size:var(--song-size,20px);outline-offset:5px}
+.chords-app .song-section{margin-bottom:34px}
+.song-footer{border-top:1px solid var(--line);padding:25px 0 max(28px,env(safe-area-inset-bottom));margin-top:12px}
+.chords-app .arrangement-notes{font-size:12px;padding:15px 17px;margin:0 0 22px}
+.song-source{margin:0 0 23px}
+.song-source h2{font-size:24px;margin-bottom:13px}
+.song-footer-line{display:flex;align-items:center;justify-content:space-between;gap:15px}
+.song-footer>.field-help{margin:8px 8px 0}
+.browse-page{max-width:1000px;margin:auto;padding:40px max(24px,env(safe-area-inset-right)) max(40px,env(safe-area-inset-bottom)) max(24px,env(safe-area-inset-left))}
+.browse-heading{display:flex;align-items:center;justify-content:space-between;gap:25px;margin-bottom:26px}
+.browse-heading h1{font-size:clamp(35px,6vw,52px);margin:10px 0 14px}
+.browse-heading p{font-size:13px;color:var(--muted)}
+.browse-heading>a{white-space:nowrap}
+.browse-search{max-width:650px;margin-bottom:20px}
+.browse-tabs{display:flex;gap:8px;border-bottom:1px solid var(--line);margin-bottom:25px}
+.browse-tabs button{min-height:46px;min-width:90px;padding:10px 16px;font-size:13px;color:var(--muted);border-bottom:3px solid transparent}
+.browse-tabs .active{border-color:var(--accent);color:var(--accent);font-weight:700}
+.browse-section-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:18px}
+.browse-section-heading h2{font-size:29px;overflow-wrap:anywhere}
+#all-artists{padding-left:0}
+.browse-list{display:flex;flex-direction:column;gap:10px;min-height:100px}
+.browse-list.artist-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(185px,1fr));gap:15px}
+.artist-card{display:flex;flex-direction:column;align-items:flex-start;text-align:left;border:1px solid var(--line);background:var(--bg);padding:23px;border-radius:16px;min-height:180px}
+.artist-card:hover{background:var(--accent-soft)}
+.artist-initial{width:46px;height:46px;display:grid;place-items:center;border-radius:50%;background:var(--accent);color:var(--paper);font:25px Georgia,serif;margin-bottom:18px}
+.artist-card strong{font-size:16px;overflow-wrap:anywhere}
+.artist-card small{font-size:11px;color:var(--muted);margin-top:5px}
+.browse-song{display:flex;gap:20px;align-items:center;border:1px solid var(--line);padding:18px 20px;border-radius:12px}
+.browse-song:hover{background:var(--accent-soft)}
+.browse-song>span:first-child{min-width:0}
+.browse-song strong{display:block;font-size:15px;overflow-wrap:anywhere}
+.browse-song small{display:block;font-size:12px;color:var(--muted);margin-top:5px}
+.browse-song-type{font-size:10px;margin-left:auto;color:var(--muted);white-space:nowrap}
+.browse-arrow{font-size:23px;color:var(--accent)}
+#browse-status{margin-top:28px}
+.browse-note{font-size:11px;color:var(--muted);margin-top:10px}
+@media(max-width:620px){
+  .chords-app .header-inner{gap:10px}.app-home span{display:none}.chords-app .header-actions{gap:4px}.chords-app .icon-button{min-width:40px;min-height:42px}.chords-app .profile-button{max-width:120px}
+  .chords-app .workspace{padding-left:max(17px,env(safe-area-inset-left));padding-right:max(17px,env(safe-area-inset-right))}
+  .song-finder{padding:12px 0 18px;gap:10px}.chords-app .song-heading{display:block;margin-bottom:13px}.chords-app .song-heading h1{font-size:35px}.chords-app .song-actions{max-width:none;margin:8px 0 0;justify-content:flex-start;gap:4px}.song-actions .text-button{padding:4px 7px}.song-actions .icon-button{min-width:37px}
+  .practice-actions{gap:8px}.practice-settings>summary{padding:8px 10px;font-size:11px;gap:5px}.settings-summary{display:none}.settings-chevron{margin-left:auto}#scroll-toggle{min-width:115px;font-size:11px;padding:8px 10px}
+  .chords-app .practice-toolbar{gap:11px}.chords-app .practice-toolbar #reset-controls{margin-left:0}.chords-app .key-summary{align-items:center}.chords-app .song-sheet{padding-top:20px;padding-bottom:14px}
+  .browse-page{padding-top:25px;padding-left:18px;padding-right:18px}.browse-heading{display:block;margin-bottom:20px}.browse-heading>a{display:inline-flex;align-items:center;margin-top:10px;padding-left:0}.browse-heading p{font-size:12px}.browse-tabs button{flex:1;min-width:0}.browse-list.artist-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.artist-card{padding:18px 14px;min-height:171px}.artist-card strong{font-size:14px}.browse-song{gap:12px;padding:16px}.browse-song-type{display:none}.browse-arrow{margin-left:auto}.song-footer-line{gap:7px}.song-footer-line .text-button{font-size:10px}
+}
+@media print{
+  .song-finder,.practice-actions,.practice-hint,.song-footer{display:none!important}
+  .chords-app .workspace{max-width:none;padding:0}.chords-app .song-heading h1{font-size:30pt}.chords-app .song-sheet{font-size:14pt;padding:10px 0}
+}

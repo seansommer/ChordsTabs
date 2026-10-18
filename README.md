@@ -6,18 +6,22 @@ Public address after Pages deployment: https://seansommer.github.io/ChordsTabs/
 
 ## Included
 
-- Browse and sort by artist or song; search both at once.
+- A dedicated browse page with separate Artists, Songs, and Saved views; open an artist to see their songs.
+- Compact search above the song, showing at most three matching songs and a link to all results.
 - Chords aligned above lyrics, plus a separate lyrics-only view.
-- Adjustable automatic scrolling with pause, speed, manual-scroll interruption, and return to top.
+- Full-page song scrolling: the header and settings move out of view, with practice settings collapsed initially.
+- Adjustable automatic scrolling at 2.5–45 px/s (half the original range), tap-to-pause, manual-scroll interruption, and return to top. Existing speed preferences are halved once when migrating to the new range.
 - Font sizes from 14 to 36 px.
 - Independent semitone transposition and capo controls, with sounding-key and chord-shape-key labels.
 - Sharp/flat spelling, slash-bass transposition, and numeric guitar-tab transposition.
-- Original-source links and optional embedded YouTube, Vimeo, or Instagram players, with a visible fallback link.
+- Arrangement notes and original-source links below the chart, with optional embedded YouTube, Vimeo, or Instagram players.
 - Device-local saved songs and practice settings, print, song-specific share links, unique share artwork, dark/light themes, and app icons.
 - Shared Music Center accounts, musician cards, and private messages, configured for the `music-center-1111` Firebase project.
 - Master-only song editor with bracketed chord notation, preview, live publishing, conflict checks, previous-version recovery, JSON export, and new-song creation.
 
 The first song is **Tired — Slow Leaves**, carried over from the uploaded-performance working chart. Approximate chords and both uncertain lyric phrases remain marked. **Evening Sketch** is a separate original instrumental exercise for trying the tab controls, not an artist transcription.
+
+Music Center opens the app in a full-viewport player, keeping navigation inside the installed hub. The record icon returns to Music Center. Direct song links and the separate Chords & Tabs home-screen app remain supported. Ordinary browser tabs still have browser-controlled address bars.
 
 ## Launch and accounts
 

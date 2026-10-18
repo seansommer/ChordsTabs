@@ -20,5 +20,20 @@
       "type": "image/png",
       "purpose": "any"
     }
+  ],
+  "categories": [
+    "music",
+    "entertainment"
+  ],
+  "description": "A comfortable place to learn, play, and collect your favorite songs.",
+  "shortcuts": [
+    {
+      "name": "Browse artists",
+      "url": "./browse.html?tab=artists"
+    },
+    {
+      "name": "Browse songs",
+      "url": "./browse.html?tab=songs"
+    }
   ]
 }
