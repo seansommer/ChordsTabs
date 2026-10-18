@@ -19,8 +19,13 @@ const storedFavorites=readStore('music-center.saved-songs.v1',[]);
 const favorites=new Set(Array.isArray(storedFavorites)?storedFavorites.filter(s=>typeof s==='string'):[]);
 const clamp=(n,min,max,def)=>Number.isFinite(Number(n))?Math.max(min,Math.min(max,Math.round(Number(n)))):def;
 const sheetTop=()=>sheet.getBoundingClientRect().top+page.scrollTop;
+function scrollStart(){
+  const firstLine=sheet.querySelector('.song-line,.tab-block')||sheet,viewport=globalThis.visualViewport;
+  // Leave a quarter-screen lead-in above the first line when starting or repeating.
+  return Math.max(0,firstLine.getBoundingClientRect().top+page.scrollTop-(viewport?.offsetTop||0)-(viewport?.height||page.clientHeight)*.25);
+}
 const songSpeeds=new SongScrollSpeeds(readStore,writeStore);
-const scroller=new AutoScroller(page,active=>scrollControls?.setActive(active),()=>({start:Math.max(0,sheetTop()-18),end:sheetTop()+sheet.offsetHeight-page.clientHeight+18+(playback?.videoHeight()||0)+(scrollControls?.height()||0)}));
+const scroller=new AutoScroller(page,active=>scrollControls?.setActive(active),()=>({start:scrollStart(),end:sheetTop()+sheet.offsetHeight-page.clientHeight+18+(playback?.videoHeight()||0)+(scrollControls?.height()||0)}));
 playback=initPlayback({scroller,beforeScroll:()=>{$('#practice-settings').open=false;$('#playback-panel').open=false;}});
 scrollControls=initScrollControls({scroller,initialSpeed:songSpeeds.defaultSpeed,saveSpeed:speed=>songSpeeds.save(current?.id,speed),beforeStart:()=>{$('#practice-settings').open=false;},onManualPause:()=>playback.suspendScroll(),onManualStart:()=>playback.enableScroll(),onCannotStart:()=>notify('This song fits on screen. Increase text size for a closer view.')});
 initScreenAwake({read:readStore,write:writeStore});
