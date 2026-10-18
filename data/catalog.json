@@ -1,0 +1,26 @@
+[
+  {
+    "id": "tired-slow-leaves",
+    "title": "Tired",
+    "artist": "Slow Leaves",
+    "status": "Working arrangement",
+    "tags": [
+      "acoustic",
+      "chords",
+      "lyrics"
+    ],
+    "file": "songs/tired-slow-leaves.json"
+  },
+  {
+    "id": "evening-sketch",
+    "title": "Evening Sketch",
+    "artist": "Music Center · Practice",
+    "status": "Original exercise",
+    "tags": [
+      "tabs",
+      "instrumental",
+      "practice"
+    ],
+    "file": "songs/evening-sketch.json"
+  }
+]

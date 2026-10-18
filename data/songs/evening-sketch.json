@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "id": "evening-sketch",
+  "title": "Evening Sketch",
+  "artist": "Music Center · Practice",
+  "key": "C",
+  "capo": 0,
+  "tuning": "Standard · E A D G B E",
+  "status": "Original exercise",
+  "sourceUrl": "",
+  "tags": [
+    "tabs",
+    "instrumental",
+    "practice"
+  ],
+  "notes": [
+    "An original two-bar practice sketch for trying the tab and capo controls. This is an exercise, not an artist transcription.",
+    "Fret numbers are relative to the selected capo. Transposition keeps the notes on the same strings; if that requires a fret below 0 or above 24, the app asks you to change the key or capo."
+  ],
+  "sections": [
+    {
+      "name": "A slow, even picking exercise",
+      "tab": [
+        {
+          "string": "e",
+          "frets": [
+            null,
+            null,
+            null,
+            0,
+            null,
+            null,
+            0,
+            null,
+            null,
+            null,
+            null,
+            0,
+            null,
+            null,
+            3,
+            null
+          ]
+        },
+        {
+          "string": "B",
+          "frets": [
+            null,
+            null,
+            1,
+            null,
+            null,
+            1,
+            null,
+            null,
+            null,
+            null,
+            1,
+            null,
+            null,
+            1,
+            null,
+            null
+          ]
+        },
+        {
+          "string": "G",
+          "frets": [
+            null,
+            0,
+            null,
+            null,
+            0,
+            null,
+            null,
+            0,
+            null,
+            2,
+            null,
+            null,
+            2,
+            null,
+            null,
+            2
+          ]
+        },
+        {
+          "string": "D",
+          "frets": [
+            2,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            3,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "string": "A",
+          "frets": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "string": "E",
+          "frets": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ]
+    }
+  ]
+}

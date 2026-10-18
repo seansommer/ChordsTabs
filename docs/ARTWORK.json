@@ -1,0 +1,40 @@
+{
+  "created": "2026-10-18",
+  "palette": [
+    "#f5f1e8",
+    "#173f38",
+    "#e6b66d"
+  ],
+  "artwork": [
+    {
+      "asset": "room",
+      "mode": "built-in imagegen",
+      "prompt": "Use case: stylized-concept. Asset type: wide website hero for a comfortable Music Center. Create a sophisticated warmly lit miniature home listening room, acoustic guitar resting by a walnut piano, vintage turntable and records on a low shelf, soft upholstered olive chair, amber table lamp, a few plants, evening window. Rich tactile crafted wood and paper textures, tasteful modern editorial 3D illustration, quiet inviting creative atmosphere, no people. Wide landscape composition 1536x1024, instruments grouped on the right two thirds, left has gently shadowed walnut wall negative space for HTML heading. Palette cream, dark walnut, muted teal, golden amber. No text, no logos, no watermark.",
+      "files": [
+        "MusicCenter/assets/room.webp",
+        "MusicCenter/assets/social-share.jpg"
+      ]
+    },
+    {
+      "asset": "guitar",
+      "mode": "built-in imagegen",
+      "prompt": "Use case: stylized-concept. Asset type: square app artwork for Chords & Tabs. A beautiful small acoustic guitar in honey walnut wood, six strings, leaning across an open cream music notebook with abstract staff-like marks (not readable text), one muted teal guitar pick, amber glow. Refined tactile 3D editorial still life on a dark warm teal backdrop, rounded soft shadows, close composition, quiet comfortable home studio mood. Guitar and notebook fill central 75 percent, strong recognizable silhouette at small size, 1024x1024. No people, no words, no watermark.",
+      "files": [
+        "MusicCenter/assets/guitar.webp",
+        "ChordsTabs/assets/icon-512.png",
+        "ChordsTabs/assets/social-share.jpg"
+      ]
+    },
+    {
+      "asset": "record-note",
+      "mode": "built-in imagegen",
+      "prompt": "Use case: logo-brand. Asset type: square home-screen app icon for Music Center, companion to a warm walnut and muted teal music-room website. A beautifully simplified 3D vinyl record in warm black with a golden amber center, small cream musical note gracefully floating above it, sitting partly in a walnut record sleeve. Centered bold unmistakable silhouette, rounded tactile materials, amber light, full-bleed deep muted teal background, 1024x1024. Icon fills central 72 percent with generous safe margins for mobile corner rounding. No text, no letters, no watermark.",
+      "files": [
+        "MusicCenter/assets/icon-512.png",
+        "MusicCenter/assets/music-icon-192.png",
+        "ChordsTabs/assets/music-icon-192.png"
+      ]
+    }
+  ],
+  "production_notes": "Optimized web assets and home-screen sizes are committed. Social images have readable typography composed over the generated artwork, with distinct backgrounds for the two apps."
+}

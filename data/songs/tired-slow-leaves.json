@@ -1,0 +1,649 @@
+{
+  "schemaVersion": 1,
+  "id": "tired-slow-leaves",
+  "title": "Tired",
+  "artist": "Slow Leaves",
+  "key": "C",
+  "capo": 0,
+  "tuning": "Standard · E A D G B E",
+  "status": "Working arrangement",
+  "sourceUrl": "https://www.instagram.com/reel/DdXgK8RJh-l/",
+  "tags": [
+    "acoustic",
+    "chords",
+    "lyrics"
+  ],
+  "notes": [
+    "Transcribed from your uploaded live performance. The chords and their placement are approximate; this is a playable working arrangement.",
+    "[?] marks unclear wording: “Put your cards” at about 0:15, and “it’s heavy now” at about 2:19. These markers are preserved from your original chart.",
+    "The original transcription notes report the published alternatives as “Play your cards” and “it’s adding up.” Review these against the performance before changing the lyrics.",
+    "Original chord shapes, low E to high e: C x32010 · G 320003 · F 133211 · Em 022000 · Am x02210. These fingering references describe the untransposed chart."
+  ],
+  "provenance": {
+    "file": "Tired_Chords_and_Lyrics.txt",
+    "date": "2026-10-18",
+    "source": "User-uploaded performance and existing working chart"
+  },
+  "sections": [
+    {
+      "name": "Intro",
+      "lines": [
+        {
+          "lyrics": "   ",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "C"
+            },
+            {
+              "at": 3,
+              "chord": "G"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Verse 1",
+      "lines": [
+        {
+          "lyrics": "Tell your friends",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "C"
+            }
+          ]
+        },
+        {
+          "lyrics": "Not to do the things that I regret",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "F"
+            },
+            {
+              "at": 14,
+              "chord": "Em"
+            },
+            {
+              "at": 28,
+              "chord": "Am"
+            }
+          ]
+        },
+        {
+          "lyrics": "Put your money on the safest bet",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "F"
+            },
+            {
+              "at": 10,
+              "chord": "G"
+            },
+            {
+              "at": 29,
+              "chord": "C"
+            }
+          ]
+        },
+        {
+          "lyrics": "[Put?] your cards and then get out of it",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "F"
+            },
+            {
+              "at": 12,
+              "chord": "Em"
+            },
+            {
+              "at": 31,
+              "chord": "Am"
+            }
+          ]
+        },
+        {
+          "lyrics": "No need to justify the means",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "F"
+            },
+            {
+              "at": 11,
+              "chord": "G"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pre-Chorus 1",
+      "lines": [
+        {
+          "lyrics": "I don't remember",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "F"
+            },
+            {
+              "at": 8,
+              "chord": "Em"
+            }
+          ]
+        },
+        {
+          "lyrics": "How bad it was",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Am"
+            }
+          ]
+        },
+        {
+          "lyrics": "Last December",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Em"
+            }
+          ]
+        },
+        {
+          "lyrics": "Another year",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "F"
+            }
+          ]
+        },
+        {
+          "lyrics": "Was coming up",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "G"
+            }
+          ]
+        },
+        {
+          "lyrics": "Another one",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "C"
+            }
+          ]
+        },
+        {
+          "lyrics": "Is never enough",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "G"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Chorus 1",
+      "lines": [
+        {
+          "lyrics": "I'm tired of dreaming",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "F"
+            }
+          ]
+        },
+        {
+          "lyrics": "I'm tired of believing",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "G"
+            }
+          ]
+        },
+        {
+          "lyrics": "I'm tired of feeling, it's never enough",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "C"
+            },
+            {
+              "at": 22,
+              "chord": "Em"
+            }
+          ]
+        },
+        {
+          "lyrics": "I'm tired of sleeping",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "F"
+            }
+          ]
+        },
+        {
+          "lyrics": "I'm tired of retreating",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "G"
+            }
+          ]
+        },
+        {
+          "lyrics": "I'm tired of just keeping appearances up",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "C"
+            },
+            {
+              "at": 26,
+              "chord": "Em"
+            }
+          ]
+        },
+        {
+          "lyrics": "I'm tired of believing and giving up",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "F"
+            },
+            {
+              "at": 23,
+              "chord": "G"
+            },
+            {
+              "at": 34,
+              "chord": "C"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Verse 2",
+      "lines": [
+        {
+          "lyrics": "Tell your friends",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "C"
+            }
+          ]
+        },
+        {
+          "lyrics": "Not to glorify your sentiments",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "F"
+            },
+            {
+              "at": 15,
+              "chord": "Em"
+            },
+            {
+              "at": 20,
+              "chord": "Am"
+            }
+          ]
+        },
+        {
+          "lyrics": "Don't mistake your pride for confidence",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "F"
+            },
+            {
+              "at": 19,
+              "chord": "G"
+            },
+            {
+              "at": 29,
+              "chord": "C"
+            }
+          ]
+        },
+        {
+          "lyrics": "There's only temporary relevance",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "F"
+            },
+            {
+              "at": 13,
+              "chord": "Em"
+            },
+            {
+              "at": 23,
+              "chord": "Am"
+            }
+          ]
+        },
+        {
+          "lyrics": "No one needs to do it all",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "F"
+            },
+            {
+              "at": 16,
+              "chord": "G"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pre-Chorus 2",
+      "lines": [
+        {
+          "lyrics": "Now, it's now or never",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "F"
+            },
+            {
+              "at": 10,
+              "chord": "Em"
+            }
+          ]
+        },
+        {
+          "lyrics": "The best you did",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Am"
+            }
+          ]
+        },
+        {
+          "lyrics": "Now do it better",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Em"
+            }
+          ]
+        },
+        {
+          "lyrics": "I had a choice",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "F"
+            }
+          ]
+        },
+        {
+          "lyrics": "I knew it well",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "G"
+            }
+          ]
+        },
+        {
+          "lyrics": "I had a voice",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "C"
+            }
+          ]
+        },
+        {
+          "lyrics": "But no one to tell",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "G"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Chorus 2",
+      "lines": [
+        {
+          "lyrics": "I'm tired of dreaming",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "F"
+            }
+          ]
+        },
+        {
+          "lyrics": "I'm tired of believing",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "G"
+            }
+          ]
+        },
+        {
+          "lyrics": "I'm tired of feeling, I'm not good enough",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "C"
+            },
+            {
+              "at": 22,
+              "chord": "Em"
+            }
+          ]
+        },
+        {
+          "lyrics": "I'm tired of sleeping",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "F"
+            }
+          ]
+        },
+        {
+          "lyrics": "I'm tired of retreating",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "G"
+            }
+          ]
+        },
+        {
+          "lyrics": "I'm tired of just keeping appearances up",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "C"
+            },
+            {
+              "at": 26,
+              "chord": "Em"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Chorus 2 / Continued",
+      "lines": [
+        {
+          "lyrics": "I'm tired of acting and overreacting",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "F"
+            },
+            {
+              "at": 20,
+              "chord": "G"
+            }
+          ]
+        },
+        {
+          "lyrics": "I'm tired of asking a little too much",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "C"
+            },
+            {
+              "at": 20,
+              "chord": "Em"
+            }
+          ]
+        },
+        {
+          "lyrics": "I'm tired of thinking",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "F"
+            }
+          ]
+        },
+        {
+          "lyrics": "It's everyone else, it's everyone else",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "G"
+            },
+            {
+              "at": 20,
+              "chord": "C"
+            }
+          ]
+        },
+        {
+          "lyrics": "I'm tired",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Em"
+            }
+          ]
+        },
+        {
+          "lyrics": "I'm tired of faking",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "F"
+            }
+          ]
+        },
+        {
+          "lyrics": "My heart always breaking",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "G"
+            }
+          ]
+        },
+        {
+          "lyrics": "My heart's always breaking, [it's heavy now?]",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "C"
+            },
+            {
+              "at": 18,
+              "chord": "Em"
+            }
+          ]
+        },
+        {
+          "lyrics": "I'm tired of guessing",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "F"
+            }
+          ]
+        },
+        {
+          "lyrics": "There's always a lesson",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "G"
+            }
+          ]
+        },
+        {
+          "lyrics": "There's always a lesson",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "C"
+            }
+          ]
+        },
+        {
+          "lyrics": "I'm tired",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Em"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Outro",
+      "lines": [
+        {
+          "lyrics": "I'm tired of believing and giving up",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "F"
+            },
+            {
+              "at": 23,
+              "chord": "G"
+            },
+            {
+              "at": 34,
+              "chord": "C"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
