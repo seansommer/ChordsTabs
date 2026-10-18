@@ -5,29 +5,29 @@ import {renderSheet} from './render.js';
 export function initEditor({getCurrent,getRecord,hasSong,onPublish}){
   let original=null,expectedRevision=0,initialForm='',previousContent='',creating=false;
   const dialog=$('#editor-dialog');
-  const snapshot=()=>['id','title','artist','key','capo','status','source','chart','notes','tabs'].map(k=>$('#edit-'+k).value).join('\u0000');
+  const snapshot=()=>['id','title','artist','key','capo','status','source','audio','chart','notes','tabs'].map(k=>$('#edit-'+k).value).join('\u0000');
   function fill(song){
     for(const key of ['id','title','artist','key','capo','status'])$('#edit-'+key).value=song[key];
-    $('#edit-source').value=song.sourceUrl||'';$('#edit-chart').value=serializeChart(song.sections);
+    $('#edit-source').value=song.sourceUrl||'';$('#edit-audio').value=song.audioUrl||'';$('#edit-chart').value=serializeChart(song.sections);
     $('#edit-notes').value=(song.notes||[]).join('\n');$('#edit-tabs').value=JSON.stringify(song.sections.filter(s=>s.tab),null,2);$('#editor-preview').hidden=true;$('#editor-error').textContent='';
   }
-  function open(isNew){
+  function open(isNew,selected=getCurrent()){
     if(!community.profile?.isMaster)return;
-    if(!isNew&&!getCurrent()){notify('Open a song first.');return;}
+    if(!isNew&&!selected){notify('Open a song first.');return;}
     creating=isNew;
-    original=isNew?{schemaVersion:1,id:'',title:'',artist:'',key:'C',capo:0,tuning:'Standard · E A D G B E',sourceUrl:'',status:'Working arrangement',tags:['chords','lyrics'],notes:[],sections:[{name:'Verse 1',lines:[{lyrics:'',chords:[]}]}]}:structuredClone(getCurrent());
+    original=isNew?{schemaVersion:1,id:'',title:'',artist:'',key:'C',capo:0,tuning:'Standard · E A D G B E',sourceUrl:'',audioUrl:'',status:'Working arrangement',tags:['chords','lyrics'],notes:[],sections:[{name:'Verse 1',lines:[{lyrics:'',chords:[]}]}]}:structuredClone(selected);
     const record=isNew?null:getRecord(original.id);expectedRevision=record?.revision||0;previousContent=JSON.stringify(original);
     fill(original);$('#edit-id').readOnly=!isNew;$('#restore-previous').hidden=!record?.previousContent;initialForm=snapshot();dialog.showModal();
   }
   function draft(){
     const tabs=JSON.parse($('#edit-tabs').value||'[]');if(!Array.isArray(tabs)||tabs.some(s=>!s.tab))throw new Error('Tab JSON must be an array of tab sections.');
     const sections=[...parseChart($('#edit-chart').value),...tabs];
-    const song={...original,id:$('#edit-id').value.trim(),title:$('#edit-title').value.trim(),artist:$('#edit-artist').value.trim(),key:$('#edit-key').value,capo:Number($('#edit-capo').value),status:$('#edit-status').value,sourceUrl:$('#edit-source').value.trim(),notes:$('#edit-notes').value.split('\n').map(s=>s.trim()).filter(Boolean),sections};
-    if(creating&&hasSong(song.id))throw new Error('That song ID already exists. Choose another ID, or open the existing song and use Edit song.');
+    const song={...original,id:$('#edit-id').value.trim(),title:$('#edit-title').value.trim(),artist:$('#edit-artist').value.trim(),key:$('#edit-key').value,capo:Number($('#edit-capo').value),status:$('#edit-status').value,sourceUrl:$('#edit-source').value.trim(),audioUrl:$('#edit-audio').value.trim(),notes:$('#edit-notes').value.split('\n').map(s=>s.trim()).filter(Boolean),sections};
+    if(creating&&hasSong(song.id))throw new Error('That song ID already exists, including deleted songs. Choose another ID or restore it in the song manager.');
     song.tags=[...(sections.some(s=>s.tab)?['tabs']:[]),...(sections.some(s=>s.lines?.some(l=>l.chords.length))?['chords']:[]),...(sections.some(s=>s.lines?.some(l=>l.lyrics.trim()))?['lyrics']:[])];
     return validateSong(song);
   }
-  $('#edit-song').onclick=()=>open(false);$('#new-song').onclick=()=>open(true);
+  $('#edit-song')?.addEventListener('click',()=>open(false));$('#new-song')?.addEventListener('click',()=>open(true));
   function close(){if(snapshot()===initialForm||confirm('Discard your unpublished changes?'))dialog.close();}
   $('#close-editor').onclick=close;dialog.addEventListener('cancel',e=>{e.preventDefault();close();});
   dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)close();}});
@@ -41,5 +41,6 @@ export function initEditor({getCurrent,getRecord,hasSong,onPublish}){
       const song=draft();const record=await community.publishSong(song,expectedRevision,previousContent);await onPublish(song,record);initialForm=snapshot();dialog.close();notify('Song published to the live songbook.');
     }catch(e){$('#editor-error').textContent=friendlyError(e);}finally{$('#publish-song').disabled=false;}
   };
-  community.subscribe(profile=>{const master=Boolean(profile?.isMaster);$('#edit-song').hidden=!master;$('#new-song').hidden=!master;if(!master&&dialog.open){dialog.close();notify('Sign in with your master account to continue editing.');}});
+  community.subscribe(profile=>{const master=Boolean(profile?.isMaster);for(const id of ['edit-song','new-song'])if($('#'+id))$('#'+id).hidden=!master;if(!master&&dialog.open){dialog.close();notify('Sign in with your master account to continue editing.');}});
+  return {edit:song=>open(false,song),add:()=>open(true)};
 }

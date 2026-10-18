@@ -1,11 +1,18 @@
 import {isConfigured} from './config.js';
 import {validateSong} from './song-format.js';
+import {isDeletedSong,readRecord} from './song-records.js';
 
 export class Songbook {
-  constructor(community){this.community=community;this.base=new Map();this.live=new Map();this.records={};this.liveReady=!isConfigured();}
-  get songs(){return [...new Set([...this.base.keys(),...this.live.keys()])].map(id=>this.get(id));}
-  get(id){return this.live.get(id)||this.base.get(id);}
-  accept(song,record){this.records[song.id]=record;this.live.set(song.id,song);this.onChange?.();}
+  constructor(community){this.community=community;this.base=new Map();this.live=new Map();this.deleted=new Map();this.records={};this.liveReady=!isConfigured();this.connected=false;}
+  get songs(){return [...new Set([...this.base.keys(),...this.live.keys()])].map(id=>this.get(id)).filter(Boolean);}
+  get(id){return this.deleted.has(id)?undefined:this.live.get(id)||this.base.get(id);}
+  has(id){return this.base.has(id)||Object.hasOwn(this.records,id);}
+  accept(song,record){this.records[song.id]=record;this.applyRecord(song.id,record);this.onChange?.();}
+  applyRecord(id,record){
+    const content=readRecord(record);this.live.delete(id);this.deleted.delete(id);
+    if(isDeletedSong(content,id)){this.deleted.set(id,content);return;}
+    const song=validateSong(content);if(song.id!==id)throw new Error('Mismatched song ID.');this.live.set(id,song);
+  }
   async start(onChange,onStatus=()=>{}){
     this.onChange=onChange;
     const response=await fetch('data/catalog.json',{cache:'no-cache'});
@@ -16,18 +23,18 @@ export class Songbook {
       const res=await fetch('data/'+entry.file,{cache:'no-cache'});if(!res.ok)throw new Error('A song could not be loaded.');
       const song=validateSong(await res.json());if(song.id!==entry.id)throw new Error('Song catalog IDs do not match.');return song;
     }));
-    entries.forEach(song=>this.base.set(song.id,song));onChange();
-    if(!isConfigured())return;
+    entries.forEach(song=>this.base.set(song.id,song));
+    if(!isConfigured()){onChange();return;}
     onStatus('Connecting live song updates…');
-    const unavailable=()=>{this.liveReady=true;onChange();onStatus('Live updates unavailable. Showing the available song files.');};
+    const unavailable=()=>{this.liveReady=true;this.connected=false;onChange();onStatus('Live updates unavailable. Showing the available song files.');};
     try{
       await this.community.init();
       this.stopLive=this.community.watchSongEdits(edits=>{
-        this.records=edits;this.live.clear();let invalid=false;
+        this.records=edits;this.live.clear();this.deleted.clear();let invalid=false;
         for(const [id,record] of Object.entries(edits)){
-          try{const song=validateSong(JSON.parse(record.content));if(song.id!==id)throw new Error();this.live.set(id,song);}catch{invalid=true;}
+          try{this.applyRecord(id,record);}catch{invalid=true;}
         }
-        this.liveReady=true;onChange();onStatus(invalid?'One live edit could not be read. Its repository version is shown.':'Live song updates connected.');
+        this.liveReady=true;this.connected=true;onChange();onStatus(invalid?'One live edit could not be read. Its repository version is shown.':'Live song updates connected.');
       },unavailable);
     }catch{unavailable();}
   }

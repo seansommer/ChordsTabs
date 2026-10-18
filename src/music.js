@@ -37,13 +37,17 @@ export function searchSongs(songs,query,sort='artist'){
 export function mediaSource(value){
   let u;try{u=new URL(value);}catch{return null;}
   if(u.protocol!=='https:'||u.username||u.password)return null;
-  const host=u.hostname.toLowerCase().replace(/^www\./,'');let embed=null;
+  const host=u.hostname.toLowerCase().replace(/^www\./,'');let embed=null,provider=null,videoId=null;
   if(['youtube.com','m.youtube.com','youtu.be'].includes(host)){
     const id=host==='youtu.be'?u.pathname.split('/')[1]:u.pathname.startsWith('/shorts/')?u.pathname.split('/')[2]:u.searchParams.get('v');
-    if(/^[A-Za-z0-9_-]{11}$/.test(id||''))embed=`https://www.youtube-nocookie.com/embed/${id}`;
-  }else if(host==='vimeo.com'&&/^\/\d+\/?$/.test(u.pathname)){embed=`https://player.vimeo.com/video/${u.pathname.split('/')[1]}`;
+    if(/^[A-Za-z0-9_-]{11}$/.test(id||'')){embed=`https://www.youtube-nocookie.com/embed/${id}`;provider='youtube';videoId=id;}
+  }else if(host==='vimeo.com'&&/^\/\d+\/?$/.test(u.pathname)){videoId=u.pathname.split('/')[1];embed=`https://player.vimeo.com/video/${videoId}`;provider='vimeo';
   }else if(host==='instagram.com'){
     const m=/^\/(reel|p)\/([A-Za-z0-9_-]+)\/?$/.exec(u.pathname);if(m)embed=`https://www.instagram.com/${m[1]}/${m[2]}/embed/`;
   }
-  return {url:u.href,embed,kind:host==='instagram.com'?'instagram':'video'};
+  return {url:u.href,embed,provider,videoId,kind:host==='instagram.com'?'instagram':'video'};
+}
+export function directMediaSource(value){
+  const source=mediaSource(value);if(!source||source.embed)return null;
+  return /\.(mp3|m4a|aac|wav|ogg|oga|opus|mp4|m4v|mov|webm)$/i.test(new URL(source.url).pathname)?source.url:null;
 }

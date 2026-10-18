@@ -1,10 +1,11 @@
-import {transposeChord,noteValue,mediaSource} from './music.js';
+import {transposeChord,noteValue,mediaSource,directMediaSource} from './music.js';
 export function validateSong(song){
   if(!song||typeof song!=='object')throw new Error('Invalid song file.');
   if(!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(song.id||'')||song.id.length>100)throw new Error('Invalid song ID.');
   for(const key of ['title','artist'])if(typeof song[key]!=='string'||!song[key].trim()||song[key].length>120)throw new Error(`Enter a ${key} up to 120 characters.`);
   noteValue(song.key);if(!Number.isInteger(song.capo)||song.capo<0||song.capo>12)throw new Error('Choose an original capo fret between 0 and 12.');
   if(song.sourceUrl&&!mediaSource(song.sourceUrl))throw new Error('Use an HTTPS song/video link.');
+  if(song.audioUrl&&!directMediaSource(song.audioUrl))throw new Error('Use a direct HTTPS audio or video file link, such as .mp3, .m4a, or .mp4. Keep social-post links in Original song / video link.');
   if(typeof song.status!=='string'||song.status.length>80)throw new Error('Invalid arrangement status.');
   if(song.tags!==undefined&&(!Array.isArray(song.tags)||song.tags.some(t=>typeof t!=='string')))throw new Error('Invalid song tags.');
   if(!Array.isArray(song.notes)||song.notes.some(n=>typeof n!=='string'||n.length>5000))throw new Error('Invalid arrangement notes.');

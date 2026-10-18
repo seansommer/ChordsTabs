@@ -8,7 +8,7 @@ export function initialScrollSpeed(value,legacy){return scrollSpeed(value,scroll
 export class AutoScroller {
   constructor(target,onChange=()=>{},bounds=()=>({})){
     this.target=target;this.onChange=onChange;this.bounds=bounds;this.speed=SCROLL_DEFAULT;this.active=false;this.tick=this.tick.bind(this);
-    const interrupt=event=>{if(event.target?.closest?.('[data-scroll-control]'))return;this.stop();};
+    const interrupt=event=>{if(event.target?.closest?.('[data-scroll-control]'))return;this.stop('interaction');};
     for(const event of ['wheel','touchstart','pointerdown','keydown'])document.addEventListener(event,interrupt,{passive:true});
     document.addEventListener('visibilitychange',()=>{if(document.hidden)this.stop();});
     globalThis.addEventListener?.('pagehide',()=>this.stop());
@@ -25,13 +25,14 @@ export class AutoScroller {
     if(this.position<start||this.position>=end-1)this.position=start;
     this.target.scrollTop=this.position;this.active=true;this.previous=null;this.onChange(true);this.frame=requestAnimationFrame(this.tick);return true;
   }
-  stop(){if(!this.active)return;this.active=false;cancelAnimationFrame(this.frame);this.onChange(false);}
+  restart(){this.stop('restart');this.target.scrollTop=this.range().start;return this.start();}
+  stop(reason='pause'){if(!this.active)return;this.active=false;cancelAnimationFrame(this.frame);this.onChange(false,reason);}
   tick(time){
     if(!this.active)return;
     const {end}=this.range();
     if(this.previous!==null){this.position=Math.min(end,this.position+Math.min(time-this.previous,100)/1000*this.speed);this.target.scrollTop=this.position;}
     this.previous=time;
-    if(this.position>=end-.5){this.stop();return;}
+    if(this.position>=end-.5){this.stop('end');return;}
     this.frame=requestAnimationFrame(this.tick);
   }
 }

@@ -77,3 +77,16 @@ The tests cover transposition, capo behavior, tab limits, search, safe embed URL
 The shared account files are copied from Music Center. Keep `src/config.js`, `identity.js`, `community.js`, `ui.js`, and `theme-boot.js` synchronized between repositories when changing the shared contract.
 
 Created by Sean.
+
+
+## Master song manager and play-along
+
+Open your account card → **Master song manager** from Music Center, the reader, or browsing. The separate manager page searches by song/artist and supports Add, Edit, Delete, and Restore. Ordinary accounts cannot publish or delete. Deletion writes a revision-protected marker in the existing `songEdits` record, keeping the latest song in `previousContent`; it hides both repository songs and live additions without letting static data reappear underneath. Deleted IDs remain reserved. The Deleted songs tab restores them. This is deletion from the live songbook, not permanent erasure of GitHub history or backups. No Firebase rule change is required.
+
+Use **Play audio** for a direct audio link or a recording selected from your device. Files are session-local object URLs; they are never uploaded or stored in the database. The master editor has an optional direct HTTPS audio/video file URL (MP3, M4A, MP4, and other supported media formats). File playback depends on the browser's codecs and the source host's availability.
+
+**Repeat song** restarts the recording. With **Scroll with playback** enabled, the chart returns to the top when playback actually resumes, then uses the selected scroll speed. Pauses/buffering stop the scroll; tapping the chart suspends linked scrolling. Restart can be used manually. This is not chord-level timing synchronization. Keep the app open; playback pauses when the page is hidden, and leaving/switching songs stops it.
+
+YouTube and Vimeo use their official player APIs in a visible player and support repeat/scroll restart when embedding is allowed. YouTube is never hidden or reduced to audio. Instagram embeds remain available in Watch here, but are not used for automatic play/repeat because they do not provide the control/event interface used by this feature. For Instagram practice, choose an audio file or your screen recording. Unsupported, private, or blocked videos show a fallback message. Browser autoplay may require another tap on Play or the embedded player.
+
+Reference APIs: https://developers.google.com/youtube/iframe_api_reference · https://developers.google.com/youtube/terms/developer-policies · https://github.com/vimeo/player.js · https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/ended_event

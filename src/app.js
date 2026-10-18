@@ -5,19 +5,22 @@ import {Songbook} from './songbook.js';
 import {renderSheet} from './render.js';
 import {AutoScroller,scrollSpeed,initialScrollSpeed} from './scroll.js';
 import {initEditor} from './editor.js';
+import {initPlayback} from './playback.js';
 
 initShell('chords');
 const book=new Songbook(community),page=document.scrollingElement,sheet=$('#sheet');
-let current=null,settings={},currentSignature='',pendingId=new URL(location.href).searchParams.get('song');
+let current=null,settings={},currentSignature='',pendingId=new URL(location.href).searchParams.get('song'),playback=null;
 let lyricsOnly=new URL(location.href).searchParams.get('view')==='lyrics';
 const storedFavorites=readStore('music-center.saved-songs.v1',[]);
 const favorites=new Set(Array.isArray(storedFavorites)?storedFavorites.filter(s=>typeof s==='string'):[]);
 const clamp=(n,min,max,def)=>Number.isFinite(Number(n))?Math.max(min,Math.min(max,Math.round(Number(n)))):def;
 const sheetTop=()=>sheet.getBoundingClientRect().top+page.scrollTop;
-const scroller=new AutoScroller(page,active=>{
+const scroller=new AutoScroller(page,(active,reason)=>{
+  if(reason==='interaction')playback?.suspendScroll();
   $('#scroll-toggle').textContent=active?'Ⅱ Pause':'▶ Auto-scroll';$('#scroll-toggle').setAttribute('aria-pressed',String(active));
   $('#scroll-help').textContent=active?'Scrolling · tap anywhere on the page to pause.':'Tap the page to pause scrolling.';
-},()=>({start:Math.max(0,sheetTop()-18),end:sheetTop()+sheet.offsetHeight-page.clientHeight+18}));
+},()=>({start:Math.max(0,sheetTop()-18),end:sheetTop()+sheet.offsetHeight-page.clientHeight+18+(playback?.videoHeight()||0)}));
+playback=initPlayback({scroller,beforeScroll:()=>{$('#practice-settings').open=false;$('#playback-panel').open=false;}});
 
 function hideSearch(){$('#search-results').hidden=true;$('#song-search').setAttribute('aria-expanded','false');}
 function renderSearch(){
@@ -56,6 +59,7 @@ function updateFavorite(){const saved=favorites.has(current.id);$('#favorite-but
 function openSong(id,{navigate=false,preserve=false}={}){
   const song=book.get(id);if(!song)return;
   scroller.stop();current=song;currentSignature=JSON.stringify(song);
+  playback.setSong(song);
   const stored=readStore('music-center.song-settings.'+id,{});
   settings={transpose:clamp(stored?.transpose,-12,12,0),capo:clamp(stored?.capo,0,12,song.capo),font:clamp(readStore('music-center.song-font',20),14,36,20),flats:typeof stored?.flats==='boolean'?stored.flats:/b/.test(song.key)};
   $('#song-artist').textContent=song.artist;$('#song-title').textContent=song.title;$('#song-meta').textContent=song.tuning||'Standard tuning';
@@ -86,7 +90,7 @@ $('#reset-controls').onclick=()=>{settings={transpose:0,capo:current.capo,font:2
 $('#chords-view').onclick=()=>{lyricsOnly=false;updateControls();syncUrl();};$('#lyrics-view').onclick=()=>{lyricsOnly=true;updateControls();syncUrl();};
 $('#practice-settings').addEventListener('toggle',()=>{if($('#practice-settings').open)scroller.stop();});
 $('#scroll-toggle').onclick=()=>{
-  if(scroller.active){scroller.stop();return;}
+  if(scroller.active){scroller.stop();playback.suspendScroll();return;}
   $('#practice-settings').open=false;
   if(!scroller.start())notify('This song fits on screen. Increase text size for a closer view.');
 };
@@ -94,12 +98,14 @@ $('#scroll-speed').value=String(initialScrollSpeed(readStore('music-center.scrol
 $('#scroll-speed').oninput=()=>{scroller.speed=scrollSpeed($('#scroll-speed').value);$('#speed-value').textContent=scroller.speed+' px/s';writeStore('music-center.scroll-speed.v2',scroller.speed);};$('#scroll-speed').oninput();
 $('#back-to-top').onclick=()=>{scroller.stop();page.scrollTop=0;};
 $('#share-song').onclick=()=>share(`${current.title} — ${current.artist}`,location.href);$('#print-song').onclick=()=>{scroller.stop();window.print();};
-$('#source-button').onclick=()=>{const source=mediaSource(current.sourceUrl);if(!source)return;scroller.stop();$('#source-title').textContent=current.title+' · '+current.artist;$('#source-link').href=source.url;$('#load-video').hidden=!source.embed;$('#video-area').replaceChildren();$('#video-area').classList.toggle('instagram',source.kind==='instagram');$('#source-dialog').showModal();};
+$('#source-button').onclick=()=>{const source=mediaSource(current.sourceUrl);if(!source)return;playback.stop();scroller.stop();$('#source-title').textContent=current.title+' · '+current.artist;$('#source-link').href=source.url;$('#load-video').hidden=!source.embed;$('#video-area').replaceChildren();$('#video-area').classList.toggle('instagram',source.kind==='instagram');$('#source-dialog').showModal();};
 $('#load-video').onclick=()=>{const source=mediaSource(current.sourceUrl);if(!source?.embed)return;const iframe=document.createElement('iframe');iframe.src=source.embed;iframe.title='Original song performance';iframe.allow='fullscreen; encrypted-media; picture-in-picture';iframe.allowFullscreen=true;iframe.referrerPolicy='strict-origin-when-cross-origin';$('#video-area').replaceChildren(iframe);$('#load-video').hidden=true;};
 $('#source-dialog').addEventListener('close',()=>$('#video-area').replaceChildren());
-initEditor({getCurrent:()=>current,getRecord:id=>book.records[id],hasSong:id=>Boolean(book.get(id)),onPublish:(song,record)=>{book.accept(song,record);openSong(song.id,{navigate:true});}});
+initEditor({getCurrent:()=>current,getRecord:id=>book.records[id],hasSong:id=>book.has(id),onPublish:(song,record)=>{book.accept(song,record);openSong(song.id,{navigate:true});}});
 
 function refreshSongs(){
+  if(current&&!book.get(current.id)){playback.setSong(null);scroller.stop();current=null;currentSignature='';$('#reader-content').hidden=true;$('#reader-loading').hidden=false;$('#reader-loading').textContent='This song has been deleted. Browse the songbook or add a song from your master menu.';notify('This song has been removed from the songbook.');}
+  if(book.liveReady&&!book.songs.length){$('#reader-content').hidden=true;$('#reader-loading').hidden=false;$('#reader-loading').textContent='Your songbook is empty. Add or restore songs from your account’s Master song manager.';hideSearch();return;}
   if(!$('#search-results').hidden)renderSearch();
   if(pendingId&&book.get(pendingId)){const id=pendingId;pendingId=null;openSong(id);return;}
   if(!current&&(!pendingId||book.liveReady)){if(pendingId){notify('That song was not found. Choose another from the songbook.');pendingId=null;}if(book.songs.length)openSong(book.songs[0].id);}

@@ -1,5 +1,6 @@
 import {FIREBASE_CONFIG,SDK_VERSION,FIREBASE_APP_NAME,COMMUNITY_PATH,isConfigured} from './config.js';
 import {credentials,createMessageId,messageKey} from './identity.js';
+import {nextSongRecord} from './song-records.js';
 
 export class Community {
   constructor(){ this.profile=null; this.listeners=new Set(); this.generation=0; }
@@ -70,13 +71,17 @@ export class Community {
   async deleteMessage(id){const p=this.require();if(!/^[-A-Za-z0-9_]{20}$/.test(id))throw new Error('Invalid message.');await this.api.remove(this.ref(`mailboxes/${p.uid}/${id}`));}
   watchSongEdits(fn,onError){return this.api.onValue(this.ref('songEdits'),s=>fn(s.val()||{}),onError);}
   async publishSong(song,expectedRevision,previousContent){
+    return this.writeSongRecord(song.id,JSON.stringify(song),expectedRevision,previousContent);
+  }
+  async deleteSong(song,expectedRevision){
+    const marker={schemaVersion:1,id:song.id,title:song.title,artist:song.artist,deleted:true};
+    return this.writeSongRecord(song.id,JSON.stringify(marker),expectedRevision,JSON.stringify(song));
+  }
+  async writeSongRecord(id,content,expectedRevision,previousContent){
     const p=this.require();if(!p.isMaster)throw new Error('Master access is required to publish a song.');
-    if(!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(song.id))throw new Error('Use a song ID made from lowercase letters, numbers, and hyphens.');
-    const content=JSON.stringify(song);if(content.length>200000)throw new Error('This chart is too large. Keep it under 200,000 characters.');
-    const result=await this.api.runTransaction(this.ref(`songEdits/${song.id}`),current=>{
-      if((current?.revision||0)!==expectedRevision)return;
-      return {content,previousContent:current?.content||previousContent||content,revision:expectedRevision+1,updatedBy:p.uid,updatedAt:this.api.serverTimestamp()};
-    },{applyLocally:false});
+    if(!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id)||id.length>100)throw new Error('Use a song ID made from lowercase letters, numbers, and hyphens.');
+    if(content.length>200000)throw new Error('This chart is too large. Keep it under 200,000 characters.');
+    const result=await this.api.runTransaction(this.ref(`songEdits/${id}`),current=>nextSongRecord(current,{content,previousContent,expectedRevision,uid:p.uid,timestamp:this.api.serverTimestamp()}),{applyLocally:false});
     if(!result.committed)throw new Error('This song changed while you were editing. Copy your draft, close the editor, and reopen the latest version before publishing.');
     return result.snapshot.val();
   }

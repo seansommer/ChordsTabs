@@ -9,6 +9,8 @@ export function notify(message){const box=$('#toast');box.textContent=message;bo
 export async function share(title,url=location.href){try{if(navigator.share)await navigator.share({title,url});else if(navigator.clipboard){await navigator.clipboard.writeText(url);notify('Link copied.');}else{prompt('Copy this link:',url);}}catch(e){if(e.name!=='AbortError')notify('Sharing is unavailable. Copy the address from your browser.');}}
 export function initShell(current){
   $('#hub-link').href=HUB_URL;$('#chords-link').href=CHORDS_URL;
+  const masterLink=$('#master-tools-link');
+  if(masterLink){masterLink.href=new URL('manage.html',CHORDS_URL).href;masterLink.onclick=event=>{if(!community.profile?.isMaster){event.preventDefault();return;}$('#profile-dialog').close();};}
   document.querySelector(`[data-nav="${current}"]`)?.setAttribute('aria-current','page');
   const themeButton=$('#theme-button');
   function themeLabel(){themeButton.setAttribute('aria-label',document.documentElement.dataset.theme==='dark'?'Switch to light mode':'Switch to dark mode');themeButton.textContent=document.documentElement.dataset.theme==='dark'?'☀':'☾';}
@@ -33,6 +35,7 @@ export function initShell(current){
   $('#copy-message-id').onclick=async()=>{try{await navigator.clipboard.writeText(community.profile.messageId);notify('Message ID copied.');}catch{notify('Select and copy the Message ID on your card.');}};
   let stopMessages=null;
   community.subscribe(profile=>{
+    if(masterLink)masterLink.hidden=!profile?.isMaster;
     $('#profile-label').textContent=profile?.displayName||'Sign in';$('#account-state')?.replaceChildren(document.createTextNode(profile?`Welcome, ${profile.displayName}`:'A little space for your music.'));
     stopMessages?.();stopMessages=null;$('#message-list').replaceChildren();
     if(profile){$('#card-name').textContent=profile.displayName;$('#card-initial').textContent=Array.from(profile.displayName)[0].toUpperCase();$('#card-id').textContent=profile.messageId;$('#card-uid').textContent=profile.uid;$('#card-role').textContent=profile.isMaster?'Master · Music Center':'At home in the Music Center';}
