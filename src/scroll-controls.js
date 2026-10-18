@@ -17,11 +17,11 @@ export function initScrollControls({scroller,initialSpeed,saveSpeed,beforeStart,
   }
   function pauseScroll(){onManualPause();scroller.stop();setActive(false);}
   function startScroll(){beforeStart();if(scroller.start())onManualStart();else onCannotStart();}
-  function setSpeed(value){
+  function setSpeed(value,persist=true){
     scroller.speed=scrollSpeed(value);const label=scroller.speed+' px/s';
     for(const input of inputs){input.value=String(scroller.speed);input.setAttribute('aria-valuetext',label);}
     for(const output of outputs)output.textContent=label;
-    minus.disabled=scroller.speed<=SCROLL_MIN;plus.disabled=scroller.speed>=SCROLL_MAX;saveSpeed(scroller.speed);
+    minus.disabled=scroller.speed<=SCROLL_MIN;plus.disabled=scroller.speed>=SCROLL_MAX;if(persist)saveSpeed(scroller.speed);
   }
   toggle.onclick=()=>scroller.active?pauseScroll():startScroll();pause.onclick=pauseScroll;start.onclick=startScroll;
   remove.onclick=()=>{pauseScroll();visible=false;setActive(false);toggle.focus({preventScroll:true});};
@@ -29,6 +29,6 @@ export function initScrollControls({scroller,initialSpeed,saveSpeed,beforeStart,
   minus.onclick=()=>setSpeed(scroller.speed-.5);plus.onclick=()=>setSpeed(scroller.speed+.5);
   if(globalThis.ResizeObserver)new ResizeObserver(measure).observe(dock);
   globalThis.addEventListener?.('resize',measure);
-  setSpeed(initialSpeed);setActive(false);
-  return {setActive,height,reset(){scroller.stop('song');visible=false;setActive(false);}};
+  setSpeed(initialSpeed,false);setActive(false);
+  return {setActive,height,loadSpeed:value=>setSpeed(value,false),reset(){scroller.stop('song');visible=false;setActive(false);}};
 }

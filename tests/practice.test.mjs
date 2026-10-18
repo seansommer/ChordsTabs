@@ -66,6 +66,8 @@ test('bottom controls pause, resume, remove and reappear, with synchronized save
   controls=initScrollControls({scroller,initialSpeed:11,saveSpeed:value=>saved=value,beforeStart:()=>{},onManualPause:()=>linked=false,onManualStart:()=>linked=true,onCannotStart:()=>assert.fail('Long chart should scroll')});
   const get=id=>document.getElementById(id),click=id=>get(id).onclick();
   assert.equal(get('scroll-dock').hidden,true);
+  assert.equal(saved,undefined,'loading controls must not overwrite a song speed');
+  controls.loadSpeed(9.5);assert.equal(get('scroll-speed').value,'9.5');assert.equal(get('dock-scroll-speed').value,'9.5');assert.equal(saved,undefined);
   click('scroll-toggle');assert.equal(scroller.active,true);assert.equal(get('scroll-dock').hidden,false);assert.equal(get('scroll-paused').hidden,true);assert.equal(controls.height(),71);
   assert.equal(style.get('--scroll-dock-height'),'71px');
   get('scroll-pause').focus();click('scroll-pause');assert.equal(scroller.active,false);assert.equal(linked,false);assert.equal(get('scroll-paused').hidden,false);assert.equal(document.activeElement,get('scroll-start'));

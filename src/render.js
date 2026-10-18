@@ -1,6 +1,6 @@
 import {element} from './ui.js';
 import {textSegments,transposeChord,transposeTab,tabText,shapeShift} from './music.js';
-export function renderSheet(target,song,{transpose=0,capo=song.capo,font=20,flats=false,lyricsOnly=false}={}){
+export function renderSheet(target,song,{transpose=0,capo=song.capo,font=20,flats=false,lyricsOnly=false,onChord=null}={}){
   target.replaceChildren();target.style.setProperty('--song-size',`${font}px`);target.classList.toggle('lyrics-only',lyricsOnly);
   const shift=shapeShift(song,transpose,capo);let rendered=0;
   for(const section of song.sections){
@@ -15,7 +15,10 @@ export function renderSheet(target,song,{transpose=0,capo=song.capo,font=20,flat
       const row=element('div',`song-line${!line.lyrics.trim()?' chord-line-only':''}`);
       if(lyricsOnly)row.append(element('span','lyric-text',line.lyrics));
       else for(const segment of textSegments(line)){
-        const piece=element('span','lyric-piece');piece.append(element('span','chord',segment.chord?transposeChord(segment.chord,shift,flats):'\u00a0'),element('span','lyric-text',segment.text));row.append(piece);
+        const piece=element('span','lyric-piece'),name=segment.chord?transposeChord(segment.chord,shift,flats):'\u00a0';
+        const interactive=onChord&&segment.chord&&!['N.C.','NC','N/C','—'].includes(name),label=element(interactive?'button':'span',interactive?'chord chord-trigger':'chord',name);
+        if(interactive){label.type='button';label.setAttribute('aria-label',`Show ${name} guitar fingering`);label.setAttribute('aria-haspopup','dialog');label.setAttribute('aria-controls','chord-card');label.onclick=()=>onChord(name,label);}
+        piece.append(label,element('span','lyric-text',segment.text));row.append(piece);
       }
       node.append(row);
     }

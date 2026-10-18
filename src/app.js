@@ -3,8 +3,11 @@ import {searchSongs,transposeNote,mediaSource} from './music.js';
 import {quickMatches} from './catalog-view.js';
 import {Songbook} from './songbook.js';
 import {renderSheet} from './render.js';
-import {AutoScroller,initialScrollSpeed} from './scroll.js';
+import {AutoScroller} from './scroll.js';
 import {initScrollControls} from './scroll-controls.js';
+import {SongScrollSpeeds} from './practice-preferences.js';
+import {initScreenAwake} from './screen-awake.js';
+import {initChordDiagrams} from './chord-diagram.js';
 import {initEditor} from './editor.js';
 import {initPlayback} from './playback.js';
 
@@ -16,9 +19,12 @@ const storedFavorites=readStore('music-center.saved-songs.v1',[]);
 const favorites=new Set(Array.isArray(storedFavorites)?storedFavorites.filter(s=>typeof s==='string'):[]);
 const clamp=(n,min,max,def)=>Number.isFinite(Number(n))?Math.max(min,Math.min(max,Math.round(Number(n)))):def;
 const sheetTop=()=>sheet.getBoundingClientRect().top+page.scrollTop;
+const songSpeeds=new SongScrollSpeeds(readStore,writeStore);
 const scroller=new AutoScroller(page,active=>scrollControls?.setActive(active),()=>({start:Math.max(0,sheetTop()-18),end:sheetTop()+sheet.offsetHeight-page.clientHeight+18+(playback?.videoHeight()||0)+(scrollControls?.height()||0)}));
 playback=initPlayback({scroller,beforeScroll:()=>{$('#practice-settings').open=false;$('#playback-panel').open=false;}});
-scrollControls=initScrollControls({scroller,initialSpeed:initialScrollSpeed(readStore('music-center.scroll-speed.v2',null),readStore('music-center.scroll-speed',null)),saveSpeed:speed=>writeStore('music-center.scroll-speed.v2',speed),beforeStart:()=>{$('#practice-settings').open=false;},onManualPause:()=>playback.suspendScroll(),onManualStart:()=>playback.enableScroll(),onCannotStart:()=>notify('This song fits on screen. Increase text size for a closer view.')});
+scrollControls=initScrollControls({scroller,initialSpeed:songSpeeds.defaultSpeed,saveSpeed:speed=>songSpeeds.save(current?.id,speed),beforeStart:()=>{$('#practice-settings').open=false;},onManualPause:()=>playback.suspendScroll(),onManualStart:()=>playback.enableScroll(),onCannotStart:()=>notify('This song fits on screen. Increase text size for a closer view.')});
+initScreenAwake({read:readStore,write:writeStore});
+const chordDiagrams=initChordDiagrams({getSettings:()=>settings,getVideoHeight:()=>playback.videoHeight()});
 
 function hideSearch(){$('#search-results').hidden=true;$('#song-search').setAttribute('aria-expanded','false');}
 function renderSearch(){
@@ -56,7 +62,7 @@ function syncUrl(push=false){
 function updateFavorite(){const saved=favorites.has(current.id);$('#favorite-button').textContent=saved?'★ Saved':'☆ Save';$('#favorite-button').setAttribute('aria-pressed',String(saved));}
 function openSong(id,{navigate=false,preserve=false}={}){
   const song=book.get(id);if(!song)return;
-  scrollControls.reset();current=song;currentSignature=JSON.stringify(song);
+  chordDiagrams.close();scrollControls.reset();current=song;currentSignature=JSON.stringify(song);scrollControls.loadSpeed(songSpeeds.forSong(id));
   playback.setSong(song);
   const stored=readStore('music-center.song-settings.'+id,{});
   settings={transpose:clamp(stored?.transpose,-12,12,0),capo:clamp(stored?.capo,0,12,song.capo),font:clamp(readStore('music-center.song-font',20),14,36,20),flats:typeof stored?.flats==='boolean'?stored.flats:/b/.test(song.key)};
@@ -74,10 +80,11 @@ function updateControls(preserve=true){
   $('#transpose-value').textContent=settings.transpose>0?'+'+settings.transpose:String(settings.transpose);$('#capo').value=String(settings.capo);$('#font-value').textContent=String(settings.font);$('#prefer-flats').checked=settings.flats;
   $('#transpose-down').disabled=settings.transpose<=-12;$('#transpose-up').disabled=settings.transpose>=12;$('#font-down').disabled=settings.font<=14;$('#font-up').disabled=settings.font>=36;
   $('#chords-view').classList.toggle('active',!lyricsOnly);$('#chords-view').setAttribute('aria-pressed',String(!lyricsOnly));$('#lyrics-view').classList.toggle('active',lyricsOnly);$('#lyrics-view').setAttribute('aria-pressed',String(lyricsOnly));
+  $('#chord-tap-hint').hidden=lyricsOnly||!current.sections.some(section=>section.lines?.some(line=>line.chords.length));
   const sounding=transposeNote(current.key,settings.transpose,settings.flats),shapes=transposeNote(current.key,settings.transpose-settings.capo,settings.flats);
   $('#key-summary').textContent=`Sounding key: ${sounding} · Chord-shape key: ${shapes} · ${settings.capo?'Capo '+settings.capo:'No capo'}`;
   $('#settings-summary').textContent=`${lyricsOnly?'Lyrics':sounding} · ${settings.capo?'Capo '+settings.capo:'No capo'} · ${settings.font}px`;
-  renderSheet(sheet,current,{...settings,lyricsOnly});
+  chordDiagrams.close();renderSheet(sheet,current,{...settings,lyricsOnly,onChord:(chord,trigger)=>chordDiagrams.open(chord,trigger)});
   if(preserve)page.scrollTop=inside?sheetTop()+progress*sheet.offsetHeight:oldScroll;
   writeStore('music-center.song-settings.'+current.id,{transpose:settings.transpose,capo:settings.capo,flats:settings.flats});writeStore('music-center.song-font',settings.font);
 }
@@ -94,7 +101,7 @@ $('#source-dialog').addEventListener('close',()=>$('#video-area').replaceChildre
 initEditor({getCurrent:()=>current,getRecord:id=>book.records[id],hasSong:id=>book.has(id),onPublish:(song,record)=>{book.accept(song,record);openSong(song.id,{navigate:true});}});
 
 function refreshSongs(){
-  if(current&&!book.get(current.id)){playback.setSong(null);scrollControls.reset();current=null;currentSignature='';$('#reader-content').hidden=true;$('#reader-loading').hidden=false;$('#reader-loading').textContent='This song has been deleted. Browse the songbook or add a song from your master menu.';notify('This song has been removed from the songbook.');}
+  if(current&&!book.get(current.id)){chordDiagrams.close();playback.setSong(null);scrollControls.reset();current=null;currentSignature='';$('#reader-content').hidden=true;$('#reader-loading').hidden=false;$('#reader-loading').textContent='This song has been deleted. Browse the songbook or add a song from your master menu.';notify('This song has been removed from the songbook.');}
   if(book.liveReady&&!book.songs.length){$('#reader-content').hidden=true;$('#reader-loading').hidden=false;$('#reader-loading').textContent='Your songbook is empty. Add or restore songs from your account’s Master song manager.';hideSearch();return;}
   if(!$('#search-results').hidden)renderSearch();
   if(pendingId&&book.get(pendingId)){const id=pendingId;pendingId=null;openSong(id);return;}

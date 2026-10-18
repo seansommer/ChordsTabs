@@ -12,6 +12,9 @@ Public address after Pages deployment: https://seansommer.github.io/ChordsTabs/
 - Full-page song scrolling: the header and settings move out of view, with practice settings collapsed initially.
 - Adjustable automatic scrolling at 2.5–45 px/s (half the original range), with a compact pause/resume/remove bar and synchronized speed controls. Taps and manual swipes keep scrolling active. Existing speed preferences are halved once when migrating to the new range.
 - Font sizes from 14 to 36 px.
+- Optional **Keep screen awake** in Practice settings, with status and a retry button when the device releases or declines it.
+- Scroll speed remembered separately for each song on this device.
+- Tap chord names for a compact fingering diagram matching the displayed chord and selected capo, while playback and scrolling continue.
 - Independent semitone transposition and capo controls, with sounding-key and chord-shape-key labels.
 - Sharp/flat spelling, slash-bass transposition, and numeric guitar-tab transposition.
 - Arrangement notes and original-source links below the chart, with optional embedded YouTube, Vimeo, or Instagram players.
@@ -94,3 +97,11 @@ Reference APIs: https://developers.google.com/youtube/iframe_api_reference · ht
 ## Compact auto-scroll controls
 
 Starting auto-scroll reveals a slim bottom bar with **Pause Auto Scroll**. When paused, it shows **Start Auto Scroll** and **Remove Auto Scroll**. Remove stops scrolling and hides the bar until scrolling is explicitly activated again. A slider and − / + buttons adjust the saved speed in 0.5 px/s steps; the practice-settings slider stays in sync. Ordinary taps, clicks, and keys do not cancel scrolling. Manual scrolling changes the current position without jumping back. The bar stays out of printed charts, and the visible video player sits above it. Song changes reset the bar; reaching the chart end or hiding the page pauses scrolling.
+
+## Practice conveniences
+
+Each song's speed is saved locally under `music-center.song-scroll-speed.v1.<song-id>`. Songs without a saved speed start from the previous global preference (including the one-time legacy speed migration). Opening a song does not write a preference or overwrite another song's speed. These settings stay on the current device/browser, as do the existing capo and text preferences.
+
+**Keep screen awake** is off initially and remembers your choice. When enabled, it requests the browser's Screen Wake Lock while the song page is visible, releases it on exit/hiding, and requests it again when you return. Unsupported browsers and device refusals have a clear status; a system release does not cause repeated requests. This works in the same-origin Music Center frame. Device battery-saving policies can still prevent it. Reference: https://developer.mozilla.org/en-US/docs/Web/API/Screen_Wake_Lock_API
+
+Chord diagrams use standard E A D G B E tuning and describe the **displayed chord shape**. Frets are relative to the selected capo, and the card names the resulting sounding chord. Dots label fingers 1–4, lines show barres, circles mean open strings, and crosses mean muted strings. Common major, minor, seventh, suspended, sixth, diminished, augmented, add9 and ninth forms cover all roots; supported slash chords retain the specified bass note. Every returned shape must contain the chord's required pitches, fit the remaining fretboard and have the correct bass. Unavailable shapes show an explicit message. No guessed diagram is substituted for an unsupported chord. Tap another chord to change the card, or close it with ×, Escape or an outside tap. It does not pause playback or scrolling. Editor previews and printed charts retain their simple chord labels.
