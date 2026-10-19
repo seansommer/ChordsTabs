@@ -1,0 +1,581 @@
+{
+  "schemaVersion": 1,
+  "id": "zigzags-dan-fable",
+  "title": "Zigzags",
+  "artist": "Dan Fable",
+  "key": "F",
+  "capo": 8,
+  "tuning": "Standard · E A D G B E",
+  "status": "Working acoustic arrangement",
+  "sourceUrl": "https://www.instagram.com/reel/DeKfuIqywuT/",
+  "tags": [
+    "chords",
+    "lyrics",
+    "acoustic arrangement",
+    "full length",
+    "capo 8",
+    "play-along"
+  ],
+  "notes": [
+    "Full-length acoustic adaptation: the long recording supplies the song order and full verse/rap/hook form, while Dan Fable’s shorter acoustic performance guides the guitar accompaniment. The released recording credits Dan Fable and Vibe Chemistry. This chart is not limited to the short Instagram excerpt.",
+    "High-capo working setup: standard tuning, capo 8, with Am – E – F – C shapes sounding as Fm – C – D♭ – A♭ in F minor. The acoustic clip shows a high capo, but the clamp is partly cropped; fret 8 is an estimate, not a confirmed reading of his exact setup. E7 is an optional variation for E; C7 is an optional turnaround color.",
+    "For the acoustic feel, try a light bass note at each change followed by a soft brush of the higher strings. Let chords ring under the sung lines, then add firmer accents under the faster rap. This is a suggested accompaniment; the exact picking, voicings and chord placement are approximate.",
+    "The chart includes four hook lines after each rap, two chord-loop cycles in the instrumental break, six lines in the final hook, and one outro cycle. Fast lyric passages were checked using both recordings and the acoustic clip’s captions. For a solo acoustic finish, you may resolve the final C back to Am and let it ring.",
+    "The linked Instagram reel is the acoustic reference. For full-length play-along, select your longer screen recording in Play-along options; the file stays on your device. Its produced beat and pacing differ from a relaxed acoustic performance. Repeat can restart the chart, but scrolling is not automatically synchronized to the music."
+  ],
+  "provenance": {
+    "date": "2026-10-19",
+    "source": "Two user-uploaded recordings; local transcription, acoustic caption checks, chord analysis, fretboard visual reference and section/repetition comparison",
+    "files": [
+      {
+        "file": "ScreenRecording_10-19-2026 09-16-30_1.mp4",
+        "role": "Full song form, lyrics and repeated sections"
+      },
+      {
+        "file": "ScreenRecording_10-19-2026 09-12-55_1.mp4",
+        "role": "Acoustic guitar reference and lyric captions"
+      }
+    ],
+    "fullTrackUrl": "https://open.spotify.com/track/5nEi4Yrxpgo9dLMLIWr6m1"
+  },
+  "sections": [
+    {
+      "name": "Verse 1",
+      "lines": [
+        {
+          "lyrics": "Have you ever got high",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Am"
+            }
+          ]
+        },
+        {
+          "lyrics": "'Cause you're sick of being low",
+          "chords": [
+            {
+              "at": 28,
+              "chord": "E"
+            }
+          ]
+        },
+        {
+          "lyrics": "Do you ever wanna die?",
+          "chords": [
+            {
+              "at": 18,
+              "chord": "F"
+            }
+          ]
+        },
+        {
+          "lyrics": "Do you ever wanna go?",
+          "chords": [
+            {
+              "at": 18,
+              "chord": "C"
+            }
+          ]
+        },
+        {
+          "lyrics": "Well, take a look in my eyes",
+          "chords": [
+            {
+              "at": 24,
+              "chord": "Am"
+            }
+          ]
+        },
+        {
+          "lyrics": "You can see in my soul",
+          "chords": [
+            {
+              "at": 18,
+              "chord": "E"
+            }
+          ]
+        },
+        {
+          "lyrics": "I'm in over my head",
+          "chords": [
+            {
+              "at": 15,
+              "chord": "F"
+            }
+          ]
+        },
+        {
+          "lyrics": "I'm in over my hope",
+          "chords": [
+            {
+              "at": 15,
+              "chord": "C"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Rap 1",
+      "lines": [
+        {
+          "lyrics": "Got a packet of the zigzags and a big bag of the weed",
+          "chords": [
+            {
+              "at": 20,
+              "chord": "Am"
+            },
+            {
+              "at": 49,
+              "chord": "E"
+            }
+          ]
+        },
+        {
+          "lyrics": "Gonna hit it with a big drag and then kick back in the breeze",
+          "chords": [
+            {
+              "at": 20,
+              "chord": "F"
+            },
+            {
+              "at": 55,
+              "chord": "C"
+            }
+          ]
+        },
+        {
+          "lyrics": "Put a dummy in the chitchat and the riffraff and the thieves",
+          "chords": [
+            {
+              "at": 19,
+              "chord": "Am"
+            },
+            {
+              "at": 53,
+              "chord": "E"
+            }
+          ]
+        },
+        {
+          "lyrics": "You don't want it with the big cats and the big stash referees",
+          "chords": [
+            {
+              "at": 27,
+              "chord": "F"
+            },
+            {
+              "at": 54,
+              "chord": "C"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Hook 1",
+      "lines": [
+        {
+          "lyrics": "Have you ever got high? ",
+          "chords": [
+            {
+              "at": 18,
+              "chord": "Am"
+            },
+            {
+              "at": 24,
+              "chord": "E"
+            }
+          ]
+        },
+        {
+          "lyrics": "Have you ever got high? ",
+          "chords": [
+            {
+              "at": 18,
+              "chord": "F"
+            },
+            {
+              "at": 24,
+              "chord": "C"
+            }
+          ]
+        },
+        {
+          "lyrics": "Have you ever got high? ",
+          "chords": [
+            {
+              "at": 18,
+              "chord": "Am"
+            },
+            {
+              "at": 24,
+              "chord": "E"
+            }
+          ]
+        },
+        {
+          "lyrics": "Have you ever got high? ",
+          "chords": [
+            {
+              "at": 18,
+              "chord": "F"
+            },
+            {
+              "at": 24,
+              "chord": "C"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Verse 2",
+      "lines": [
+        {
+          "lyrics": "Have you ever found light",
+          "chords": [
+            {
+              "at": 20,
+              "chord": "Am"
+            }
+          ]
+        },
+        {
+          "lyrics": "In a room in the dark?",
+          "chords": [
+            {
+              "at": 17,
+              "chord": "E"
+            }
+          ]
+        },
+        {
+          "lyrics": "Have you ever lost sight?",
+          "chords": [
+            {
+              "at": 19,
+              "chord": "F"
+            }
+          ]
+        },
+        {
+          "lyrics": "Do you know who you are?",
+          "chords": [
+            {
+              "at": 20,
+              "chord": "C"
+            }
+          ]
+        },
+        {
+          "lyrics": "Well, take a look in my eyes",
+          "chords": [
+            {
+              "at": 24,
+              "chord": "Am"
+            }
+          ]
+        },
+        {
+          "lyrics": "You can feel my scars",
+          "chords": [
+            {
+              "at": 16,
+              "chord": "E"
+            }
+          ]
+        },
+        {
+          "lyrics": "I'm in over my head",
+          "chords": [
+            {
+              "at": 15,
+              "chord": "F"
+            }
+          ]
+        },
+        {
+          "lyrics": "I'm in over my heart",
+          "chords": [
+            {
+              "at": 15,
+              "chord": "C"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Rap 2",
+      "lines": [
+        {
+          "lyrics": "Got a packet of the zigzags and a big bag of the weed",
+          "chords": [
+            {
+              "at": 20,
+              "chord": "Am"
+            },
+            {
+              "at": 49,
+              "chord": "E"
+            }
+          ]
+        },
+        {
+          "lyrics": "Gonna hit it with a big drag and then kick back in the breeze",
+          "chords": [
+            {
+              "at": 20,
+              "chord": "F"
+            },
+            {
+              "at": 55,
+              "chord": "C"
+            }
+          ]
+        },
+        {
+          "lyrics": "Put a dummy in the chitchat and the riffraff and the thieves",
+          "chords": [
+            {
+              "at": 19,
+              "chord": "Am"
+            },
+            {
+              "at": 53,
+              "chord": "E"
+            }
+          ]
+        },
+        {
+          "lyrics": "You don't want it with the big cats and the big stash referees",
+          "chords": [
+            {
+              "at": 27,
+              "chord": "F"
+            },
+            {
+              "at": 54,
+              "chord": "C"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Hook 2",
+      "lines": [
+        {
+          "lyrics": "Have you ever got high? ",
+          "chords": [
+            {
+              "at": 18,
+              "chord": "Am"
+            },
+            {
+              "at": 24,
+              "chord": "E"
+            }
+          ]
+        },
+        {
+          "lyrics": "Have you ever got high? ",
+          "chords": [
+            {
+              "at": 18,
+              "chord": "F"
+            },
+            {
+              "at": 24,
+              "chord": "C"
+            }
+          ]
+        },
+        {
+          "lyrics": "Have you ever got high? ",
+          "chords": [
+            {
+              "at": 18,
+              "chord": "Am"
+            },
+            {
+              "at": 24,
+              "chord": "E"
+            }
+          ]
+        },
+        {
+          "lyrics": "Have you ever got high? ",
+          "chords": [
+            {
+              "at": 18,
+              "chord": "F"
+            },
+            {
+              "at": 24,
+              "chord": "C"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Instrumental break — 2 cycles",
+      "lines": [
+        {
+          "lyrics": "            ",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Am"
+            },
+            {
+              "at": 4,
+              "chord": "E"
+            },
+            {
+              "at": 8,
+              "chord": "F"
+            },
+            {
+              "at": 12,
+              "chord": "C"
+            }
+          ]
+        },
+        {
+          "lyrics": "            ",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Am"
+            },
+            {
+              "at": 4,
+              "chord": "E"
+            },
+            {
+              "at": 8,
+              "chord": "F"
+            },
+            {
+              "at": 12,
+              "chord": "C"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Final hook",
+      "lines": [
+        {
+          "lyrics": "Have you ever got high? ",
+          "chords": [
+            {
+              "at": 18,
+              "chord": "Am"
+            },
+            {
+              "at": 24,
+              "chord": "E"
+            }
+          ]
+        },
+        {
+          "lyrics": "Have you ever got high? ",
+          "chords": [
+            {
+              "at": 18,
+              "chord": "F"
+            },
+            {
+              "at": 24,
+              "chord": "C"
+            }
+          ]
+        },
+        {
+          "lyrics": "Have you ever got high? ",
+          "chords": [
+            {
+              "at": 18,
+              "chord": "Am"
+            },
+            {
+              "at": 24,
+              "chord": "E"
+            }
+          ]
+        },
+        {
+          "lyrics": "Have you ever got high? ",
+          "chords": [
+            {
+              "at": 18,
+              "chord": "F"
+            },
+            {
+              "at": 24,
+              "chord": "C"
+            }
+          ]
+        },
+        {
+          "lyrics": "Have you ever got high? ",
+          "chords": [
+            {
+              "at": 18,
+              "chord": "Am"
+            },
+            {
+              "at": 24,
+              "chord": "E"
+            }
+          ]
+        },
+        {
+          "lyrics": "Have you ever got high? ",
+          "chords": [
+            {
+              "at": 18,
+              "chord": "F"
+            },
+            {
+              "at": 24,
+              "chord": "C"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Outro — 1 cycle",
+      "lines": [
+        {
+          "lyrics": "            ",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Am"
+            },
+            {
+              "at": 4,
+              "chord": "E"
+            },
+            {
+              "at": 8,
+              "chord": "F"
+            },
+            {
+              "at": 12,
+              "chord": "C"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

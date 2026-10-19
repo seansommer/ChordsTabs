@@ -1,5 +1,20 @@
 [
   {
+    "id": "zigzags-dan-fable",
+    "title": "Zigzags",
+    "artist": "Dan Fable",
+    "status": "Working acoustic arrangement",
+    "tags": [
+      "chords",
+      "lyrics",
+      "acoustic arrangement",
+      "full length",
+      "capo 8",
+      "play-along"
+    ],
+    "file": "songs/zigzags-dan-fable.json"
+  },
+  {
     "id": "breadwinner-scott-helman",
     "title": "Breadwinner",
     "artist": "Scott Helman",
