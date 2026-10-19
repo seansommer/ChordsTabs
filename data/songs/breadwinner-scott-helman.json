@@ -1,0 +1,269 @@
+{
+  "schemaVersion": 1,
+  "id": "breadwinner-scott-helman",
+  "title": "Breadwinner",
+  "artist": "Scott Helman",
+  "key": "E",
+  "capo": 0,
+  "tuning": "Standard · E A D G B E",
+  "status": "Working arrangement · excerpt",
+  "sourceUrl": "https://youtube.com/shorts/HTUqK-Njhq0",
+  "tags": [
+    "chords",
+    "lyrics",
+    "acoustic",
+    "no capo",
+    "play-along",
+    "excerpt"
+  ],
+  "notes": [
+    "This working chart follows the captioned excerpt in your uploaded screen recording, through the repeated “I know you will” ending. The brief, incomplete continuation after that is not included. This is an excerpt arrangement, not a complete-song transcription.",
+    "Suggested guitar setup: standard tuning, no capo, sounding in E major. Chords and their placement over the words are approximate. The fast middle passage uses tentative chord choices and simplified voicings; review that section against the recording before treating it as a finished arrangement.",
+    "Lyrics were checked against the words displayed in the video, with automated speech transcription used as a secondary check. The master song editor can refine any wording or chord placement. No precise fingerpicking tab is claimed for this accompaniment.",
+    "For C-family chord shapes, try Capo 4 in Practice settings; the app changes the written shapes while preserving the sounding key. Let the final E shape ring when playing without a capo.",
+    "The original-video button uses your YouTube link. You can also select your screen recording in Play-along options; the file stays on your device. Repeat with Scroll with playback enabled restarts the chart, but the scroll speed is still chosen by you."
+  ],
+  "provenance": {
+    "date": "2026-10-19",
+    "source": "User-uploaded screen recording; visible captions and local audio analysis",
+    "file": "ScreenRecording_10-19-2026 09-00-02_1.mp4"
+  },
+  "sections": [
+    {
+      "name": "Opening — recorded excerpt",
+      "lines": [
+        {
+          "lyrics": "She's the breadwinner",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "E"
+            }
+          ]
+        },
+        {
+          "lyrics": "Least I could do is make a good dinner",
+          "chords": [
+            {
+              "at": 27,
+              "chord": "C#m"
+            }
+          ]
+        },
+        {
+          "lyrics": "She has my back till it all pans out",
+          "chords": [
+            {
+              "at": 33,
+              "chord": "F#m7"
+            }
+          ]
+        },
+        {
+          "lyrics": "My little drop of water when I'm in a drought",
+          "chords": [
+            {
+              "at": 36,
+              "chord": "B7"
+            }
+          ]
+        },
+        {
+          "lyrics": "She's the breadwinner",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "E"
+            }
+          ]
+        },
+        {
+          "lyrics": "Hard to believe that she never gets bitter",
+          "chords": [
+            {
+              "at": 36,
+              "chord": "C#m"
+            }
+          ]
+        },
+        {
+          "lyrics": "Pulling out my hair when the sun falls down",
+          "chords": [
+            {
+              "at": 20,
+              "chord": "F#m7"
+            }
+          ]
+        },
+        {
+          "lyrics": "Screaming at the sky 'cause the songs just won't fall out",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "C#m"
+            },
+            {
+              "at": 32,
+              "chord": "E"
+            },
+            {
+              "at": 54,
+              "chord": "A"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Middle passage — approximate",
+      "lines": [
+        {
+          "lyrics": "I know it don't look that good right now",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "E"
+            }
+          ]
+        },
+        {
+          "lyrics": "But baby, oh baby",
+          "chords": [
+            {
+              "at": 4,
+              "chord": "G#7"
+            }
+          ]
+        },
+        {
+          "lyrics": "You know that I got a plan",
+          "chords": [
+            {
+              "at": 14,
+              "chord": "Bm"
+            }
+          ]
+        },
+        {
+          "lyrics": "We're taking the main street",
+          "chords": [
+            {
+              "at": 6,
+              "chord": "G#7"
+            }
+          ]
+        },
+        {
+          "lyrics": "Straight to the promised land",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "D7"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Refrain",
+      "lines": [
+        {
+          "lyrics": "Big cheese",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "E"
+            }
+          ]
+        },
+        {
+          "lyrics": "Hitting every city with a brand new sound",
+          "chords": [
+            {
+              "at": 26,
+              "chord": "A"
+            }
+          ]
+        },
+        {
+          "lyrics": "And a bag for the bills",
+          "chords": []
+        },
+        {
+          "lyrics": "She kissed me, she whispered",
+          "chords": [
+            {
+              "at": 4,
+              "chord": "E"
+            },
+            {
+              "at": 19,
+              "chord": "E7"
+            }
+          ]
+        },
+        {
+          "lyrics": "\"Oh baby, I know you will\"",
+          "chords": [
+            {
+              "at": 4,
+              "chord": "A"
+            },
+            {
+              "at": 12,
+              "chord": "Am7"
+            },
+            {
+              "at": 21,
+              "chord": "E"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Repeated ending",
+      "lines": [
+        {
+          "lyrics": "I know you will",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "E"
+            }
+          ]
+        },
+        {
+          "lyrics": "I know you will",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "C#m"
+            },
+            {
+              "at": 11,
+              "chord": "E"
+            }
+          ]
+        },
+        {
+          "lyrics": "I know you will ",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "G#m7"
+            },
+            {
+              "at": 11,
+              "chord": "A"
+            },
+            {
+              "at": 16,
+              "chord": "E"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

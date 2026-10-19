@@ -1,5 +1,20 @@
 [
   {
+    "id": "breadwinner-scott-helman",
+    "title": "Breadwinner",
+    "artist": "Scott Helman",
+    "status": "Working arrangement · excerpt",
+    "tags": [
+      "chords",
+      "lyrics",
+      "acoustic",
+      "no capo",
+      "play-along",
+      "excerpt"
+    ],
+    "file": "songs/breadwinner-scott-helman.json"
+  },
+  {
     "id": "wouldnt-it-be-funny-lauryn-marie",
     "title": "Wouldn't It Be Funny?",
     "artist": "Lauryn Marie",
