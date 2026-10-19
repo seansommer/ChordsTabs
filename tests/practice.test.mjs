@@ -54,6 +54,50 @@ test('slow scrolling keeps fractional progress and adopts manual movement withou
   page.scrollTop=200;scroller.tick(4040);assert.equal(page.scrollTop,200);assert.equal(scroller.active,true);
 });
 
+test('the sheet moves smoothly between rounded page pixels at the slowest speed',()=>{
+  globalThis.document={addEventListener:()=>{}};
+  globalThis.requestAnimationFrame=()=>1;globalThis.cancelAnimationFrame=()=>{};
+  let top=0,writes=0,measurements=0;
+  const page={scrollHeight:3000,clientHeight:700,get scrollTop(){return top;},set scrollTop(value){top=Math.round(value);writes++;}};
+  const styles=new Map(),classes=new Set();
+  const sheet={style:{setProperty:(name,value)=>styles.set(name,value),removeProperty:name=>styles.delete(name)},classList:{add:name=>classes.add(name),remove:name=>classes.delete(name)}};
+  const visiblePosition=()=>page.scrollTop-parseFloat(styles.get('--auto-scroll-offset')||0);
+  const scroller=new AutoScroller(page,()=>{},()=>{measurements++;return {start:200,end:800};},sheet);
+  scroller.speed=2.5;scroller.start();scroller.tick(0);
+  let previous=visiblePosition();
+  for(let frame=1;frame<=240;frame++){
+    const time=frame*1000/120;scroller.tick(time);
+    const current=visiblePosition();
+    assert.ok(current>previous,'text must advance on every frame, including between pixel steps');
+    assert.ok(Math.abs(current-(200+time/1000*2.5))<.0002,'the rendered position must follow the selected speed');
+    previous=current;
+  }
+  assert.ok(writes<=7,'slow scrolling should not keep issuing unchanged document scrolls');
+  assert.ok(measurements<=2,'steady scrolling should not remeasure the chart every frame');
+  page.scrollTop=500;const manualPosition=visiblePosition();scroller.tick(2020);
+  assert.ok(Math.abs(visiblePosition()-(manualPosition+.05))<.0002);assert.equal(scroller.active,true);
+  scroller.stop();assert.equal(classes.has('is-auto-scrolling'),false);assert.equal(styles.has('--auto-scroll-offset'),false);
+  scroller.start();assert.equal(page.scrollTop,500,'resuming must keep the current place');
+  scroller.restart();assert.equal(visiblePosition(),200,'repeat must return to the cushioned starting position');
+});
+
+test('cached scroll limits refresh when the viewport or chart layout changes',()=>{
+  const previousResizeObserver=globalThis.ResizeObserver,previousViewport=globalThis.visualViewport;
+  const observed=[];let resized,viewportResized,end=900;
+  globalThis.document={addEventListener:()=>{}};
+  globalThis.requestAnimationFrame=()=>1;globalThis.cancelAnimationFrame=()=>{};
+  globalThis.ResizeObserver=class{constructor(callback){resized=callback;}observe(node){observed.push(node);}};
+  globalThis.visualViewport={addEventListener(name,callback){if(name==='resize')viewportResized=callback;}};
+  try{
+    const page={scrollTop:0,scrollHeight:3000,clientHeight:700};
+    const scroller=new AutoScroller(page,()=>{},()=>({start:200,end}));scroller.speed=10;
+    scroller.start();scroller.tick(0);assert.ok(observed.includes(page));
+    end=210;resized();scroller.tick(100);assert.equal(scroller.limits.end,210);
+    end=202;viewportResized();scroller.tick(200);
+    assert.equal(page.scrollTop,202);assert.equal(scroller.active,false);
+  }finally{globalThis.ResizeObserver=previousResizeObserver;globalThis.visualViewport=previousViewport;}
+});
+
 test('bottom controls pause, resume, remove and reappear, with synchronized saved speed',()=>{
   const nodes=new Map(),style=new Map(),classes=new Set();
   globalThis.document={hidden:false,activeElement:null,addEventListener:()=>{},documentElement:{style:{setProperty:(key,value)=>style.set(key,value)}},body:{classList:{toggle:(key,value)=>value?classes.add(key):classes.delete(key)}},getElementById(id){

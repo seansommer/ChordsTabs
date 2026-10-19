@@ -49,6 +49,7 @@
 #scroll-toggle{min-height:46px;min-width:123px}
 .practice-hint{font-size:10px;color:var(--muted);text-align:right;margin:5px 0 4px}
 .chords-app .song-sheet{height:auto;min-height:0;max-height:none;overflow:visible;overscroll-behavior:auto;scrollbar-gutter:auto;padding:24px 0 20px;font-size:var(--song-size,20px);outline-offset:5px}
+.chords-app .song-sheet.is-auto-scrolling{transform:translate3d(0,var(--auto-scroll-offset,0px),0);will-change:transform;overflow-anchor:none}
 .chords-app .song-section{margin-bottom:34px}
 .song-footer{border-top:1px solid var(--line);padding:25px 0 max(28px,env(safe-area-inset-bottom));margin-top:12px}
 .chords-app .arrangement-notes{font-size:12px;padding:15px 17px;margin:0 0 22px}
