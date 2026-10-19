@@ -1,0 +1,530 @@
+{
+  "schemaVersion": 1,
+  "id": "wouldnt-it-be-funny-lauryn-marie",
+  "title": "Wouldn't It Be Funny?",
+  "artist": "Lauryn Marie",
+  "key": "C",
+  "capo": 0,
+  "tuning": "Standard · E A D G B E",
+  "status": "Working arrangement",
+  "sourceUrl": "https://youtu.be/R6gD1fgV0EA",
+  "tags": [
+    "chords",
+    "lyrics",
+    "acoustic",
+    "no capo",
+    "play-along"
+  ],
+  "notes": [
+    "Working guitar accompaniment prepared from your uploaded screen recording of “Wouldn’t It Be Funny?” by Lauryn Marie. Lyrics follow the on-screen captions. The chart follows the supplied performance, including the wordless interlude, bridge and closing refrains.",
+    "Suggested setup: standard guitar tuning, no capo, sounding in C major. The verse uses C, E7, Dm, F, Fm, G and D shapes. The major D is intentional in this working accompaniment. Chord placement, pickups and exact voicings are approximate; this is not an official or note-for-note transcription.",
+    "The banjo-led recording is adapted to guitar. The choruses and interlude use simplified C, Dm/Dm7 and C changes; quick chromatic passing harmonies are omitted. Play the interlude as two relaxed accompaniment cycles and let the final C ring. The master song editor can be used to refine these changes.",
+    "Use the original-video button for the YouTube link you supplied. You can also select your screen recording in Play-along options; the file stays on your device. Repeat with Scroll with playback enabled restarts the chart, but you still choose the scrolling speed."
+  ],
+  "provenance": {
+    "date": "2026-10-18",
+    "source": "User-uploaded screen recording; visible captions and local audio analysis",
+    "file": "ScreenRecording_10-18-2026 21-53-19_1.mp4"
+  },
+  "sections": [
+    {
+      "name": "Verse 1",
+      "lines": [
+        {
+          "lyrics": "Statistically, I've probably",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "C"
+            },
+            {
+              "at": 20,
+              "chord": "E7"
+            }
+          ]
+        },
+        {
+          "lyrics": "Already met the love of my life",
+          "chords": [
+            {
+              "at": 8,
+              "chord": "Dm"
+            },
+            {
+              "at": 27,
+              "chord": "Fm"
+            }
+          ]
+        },
+        {
+          "lyrics": "So, who is he?",
+          "chords": [
+            {
+              "at": 8,
+              "chord": "C"
+            }
+          ]
+        },
+        {
+          "lyrics": "I'm pondering my options",
+          "chords": [
+            {
+              "at": 4,
+              "chord": "E7"
+            }
+          ]
+        },
+        {
+          "lyrics": "Like I've really got them ",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "F"
+            },
+            {
+              "at": 21,
+              "chord": "Fm"
+            },
+            {
+              "at": 26,
+              "chord": "G"
+            }
+          ]
+        },
+        {
+          "lyrics": "It's out of my hands",
+          "chords": [
+            {
+              "at": 5,
+              "chord": "C"
+            }
+          ]
+        },
+        {
+          "lyrics": "That much I understand",
+          "chords": [
+            {
+              "at": 5,
+              "chord": "E7"
+            }
+          ]
+        },
+        {
+          "lyrics": "But I could use a clue, maybe two",
+          "chords": [
+            {
+              "at": 12,
+              "chord": "F"
+            },
+            {
+              "at": 30,
+              "chord": "D"
+            }
+          ]
+        },
+        {
+          "lyrics": "",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "F"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Chorus 1",
+      "lines": [
+        {
+          "lyrics": "Wouldn't it be funny if it's you?",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "C"
+            },
+            {
+              "at": 29,
+              "chord": "Dm"
+            }
+          ]
+        },
+        {
+          "lyrics": "Falling like I swore I'd never do",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Dm7"
+            },
+            {
+              "at": 31,
+              "chord": "C"
+            }
+          ]
+        },
+        {
+          "lyrics": "Just two people left inside the room",
+          "chords": [
+            {
+              "at": 32,
+              "chord": "Dm"
+            }
+          ]
+        },
+        {
+          "lyrics": "Who am I to say it isn't you?",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Dm7"
+            },
+            {
+              "at": 25,
+              "chord": "C"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Verse 2",
+      "lines": [
+        {
+          "lyrics": "Well, just in case that's not our fate",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "C"
+            },
+            {
+              "at": 26,
+              "chord": "E7"
+            }
+          ]
+        },
+        {
+          "lyrics": "I'm making small talk",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Dm"
+            }
+          ]
+        },
+        {
+          "lyrics": "Going stag to coffee shops",
+          "chords": [
+            {
+              "at": 6,
+              "chord": "Fm"
+            }
+          ]
+        },
+        {
+          "lyrics": "I meet the eyes of passers-by",
+          "chords": [
+            {
+              "at": 2,
+              "chord": "C"
+            },
+            {
+              "at": 19,
+              "chord": "E7"
+            }
+          ]
+        },
+        {
+          "lyrics": "Like they'll send me a signal",
+          "chords": [
+            {
+              "at": 13,
+              "chord": "F"
+            }
+          ]
+        },
+        {
+          "lyrics": "Blinking in Morse code",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Fm"
+            }
+          ]
+        },
+        {
+          "lyrics": "I can't decide",
+          "chords": [
+            {
+              "at": 2,
+              "chord": "C"
+            }
+          ]
+        },
+        {
+          "lyrics": "If I'm wasting my time",
+          "chords": [
+            {
+              "at": 7,
+              "chord": "E7"
+            }
+          ]
+        },
+        {
+          "lyrics": "Guess the one could be under my nose",
+          "chords": [
+            {
+              "at": 10,
+              "chord": "F"
+            },
+            {
+              "at": 32,
+              "chord": "D"
+            }
+          ]
+        },
+        {
+          "lyrics": "",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "F"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Chorus 2",
+      "lines": [
+        {
+          "lyrics": "Wouldn't it be funny if it's you?",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "C"
+            },
+            {
+              "at": 29,
+              "chord": "Dm"
+            }
+          ]
+        },
+        {
+          "lyrics": "Falling like I swore I'd never do",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Dm7"
+            },
+            {
+              "at": 31,
+              "chord": "C"
+            }
+          ]
+        },
+        {
+          "lyrics": "Just two people left inside the room",
+          "chords": [
+            {
+              "at": 32,
+              "chord": "Dm"
+            }
+          ]
+        },
+        {
+          "lyrics": "Who am I to say it isn't you?",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Dm7"
+            },
+            {
+              "at": 25,
+              "chord": "C"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Interlude — wordless vocals",
+      "lines": [
+        {
+          "lyrics": "            ",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "C"
+            },
+            {
+              "at": 4,
+              "chord": "Dm"
+            },
+            {
+              "at": 8,
+              "chord": "Dm7"
+            },
+            {
+              "at": 12,
+              "chord": "C"
+            }
+          ]
+        },
+        {
+          "lyrics": "            ",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "C"
+            },
+            {
+              "at": 4,
+              "chord": "Dm"
+            },
+            {
+              "at": 8,
+              "chord": "Dm7"
+            },
+            {
+              "at": 12,
+              "chord": "C"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Bridge",
+      "lines": [
+        {
+          "lyrics": "I play it cool",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "C"
+            }
+          ]
+        },
+        {
+          "lyrics": "But when I have to choose",
+          "chords": [
+            {
+              "at": 4,
+              "chord": "E7"
+            }
+          ]
+        },
+        {
+          "lyrics": "You're the one I'll keep running back to",
+          "chords": [
+            {
+              "at": 11,
+              "chord": "F"
+            },
+            {
+              "at": 38,
+              "chord": "D"
+            }
+          ]
+        },
+        {
+          "lyrics": "    ",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Fm"
+            },
+            {
+              "at": 4,
+              "chord": "F"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Final Chorus",
+      "lines": [
+        {
+          "lyrics": "Wouldn't it be funny if it's you?",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "C"
+            },
+            {
+              "at": 29,
+              "chord": "Dm"
+            }
+          ]
+        },
+        {
+          "lyrics": "Falling like I swore I'd never do",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Dm7"
+            },
+            {
+              "at": 31,
+              "chord": "C"
+            }
+          ]
+        },
+        {
+          "lyrics": "Just two people left inside the room",
+          "chords": [
+            {
+              "at": 32,
+              "chord": "Dm"
+            }
+          ]
+        },
+        {
+          "lyrics": "Who am I to say it isn't you?",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Dm7"
+            },
+            {
+              "at": 25,
+              "chord": "C"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Outro",
+      "lines": [
+        {
+          "lyrics": "Who am I to say it isn't you?",
+          "chords": [
+            {
+              "at": 19,
+              "chord": "Dm7"
+            },
+            {
+              "at": 25,
+              "chord": "C"
+            }
+          ]
+        },
+        {
+          "lyrics": "Wouldn't it be funny if it's you?",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Dm7"
+            },
+            {
+              "at": 29,
+              "chord": "C"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

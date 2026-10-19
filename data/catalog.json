@@ -1,5 +1,19 @@
 [
   {
+    "id": "wouldnt-it-be-funny-lauryn-marie",
+    "title": "Wouldn't It Be Funny?",
+    "artist": "Lauryn Marie",
+    "status": "Working arrangement",
+    "tags": [
+      "chords",
+      "lyrics",
+      "acoustic",
+      "no capo",
+      "play-along"
+    ],
+    "file": "songs/wouldnt-it-be-funny-lauryn-marie.json"
+  },
+  {
     "id": "lonely-tiger-lewis",
     "title": "Lonely",
     "artist": "Tiger Lewis",
