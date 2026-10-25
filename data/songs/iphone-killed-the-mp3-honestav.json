@@ -1,0 +1,860 @@
+{
+  "schemaVersion": 1,
+  "id": "iphone-killed-the-mp3-honestav",
+  "title": "iPhone Killed the MP3",
+  "artist": "honestav",
+  "key": "F#",
+  "capo": 2,
+  "tuning": "Standard · E A D G B E",
+  "status": "Working arrangement · lyric review",
+  "sourceUrl": "https://www.youtube.com/watch?v=C_zkYlpfAMY",
+  "tags": [
+    "chords",
+    "lyrics",
+    "acoustic arrangement",
+    "full length",
+    "capo 2",
+    "play-along",
+    "lyric review"
+  ],
+  "notes": [
+    "Full-song guitar accompaniment prepared from your uploaded recording. Includes the opening verse, both pre-choruses, three choruses, the breakdown and the final repeated refrain. This is a working acoustic adaptation of the studio recording; chord placement and voicings are approximate.",
+    "Suggested setup: standard tuning, capo 2. Written shapes Em – D – G sound as F♯m – E – A. The main two-bar pattern is | Em | D G |: hold Em for four beats, then D and G for two beats each. The pre-choruses and breakdown vary the holds. Capo 2 is a convenient arrangement choice; the supplied video shows album artwork and does not establish the artist’s guitar setup.",
+    "Try light downstrokes or bass-note-and-brush playing in the verses, then fuller eighth-note strumming in the choruses. Em7 and Gmaj7 can be used as optional colors. These are suggested guitar voicings rather than a note-for-note tab of the recorded instrumental parts.",
+    "Lyric review: the opening “Cheap broads” phrase, the pandemic phrase in Verse 2, and the words after “radio” in the pre-choruses remain uncertain. Review markers are retained in the chart. Short pickup words are approximate, and overlapping backing responses are condensed; the breakdown retains the “internet killed the radio” response. The full form is present, including the final chorus and refrain.",
+    "Use Watch here or the visible YouTube play-along player for the linked original, where embedding is permitted. You can also select your screen recording in Play-along options; it stays on your device. Repeat can restart the chart, while scroll speed remains manually adjustable rather than synchronized to each lyric."
+  ],
+  "provenance": {
+    "date": "2026-10-25",
+    "source": "User-uploaded full recording; local lyric transcription, focused phrase comparisons and harmonic/bass analysis",
+    "files": [
+      {
+        "file": "ScreenRecording_10-25-2026 03-46-38_1.mp4",
+        "role": "Full song, lyric order, repeated sections and harmonic reference"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "name": "Intro — main pattern",
+      "lines": [
+        {
+          "lyrics": "            ",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Em"
+            },
+            {
+              "at": 8,
+              "chord": "D"
+            },
+            {
+              "at": 12,
+              "chord": "G"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Verse 1",
+      "lines": [
+        {
+          "lyrics": "Maybe the applause will fix me",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Em"
+            },
+            {
+              "at": 24,
+              "chord": "D"
+            }
+          ]
+        },
+        {
+          "lyrics": "The bars and whiskey",
+          "chords": [
+            {
+              "at": 4,
+              "chord": "G"
+            }
+          ]
+        },
+        {
+          "lyrics": "Cheap broads [uncertain] and the models with me",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Em"
+            }
+          ]
+        },
+        {
+          "lyrics": "And maybe I'll be gone tomorrow",
+          "chords": [
+            {
+              "at": 4,
+              "chord": "D"
+            }
+          ]
+        },
+        {
+          "lyrics": "The Harley throttles",
+          "chords": [
+            {
+              "at": 4,
+              "chord": "G"
+            }
+          ]
+        },
+        {
+          "lyrics": "Garage full of empty bottles",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Em"
+            }
+          ]
+        },
+        {
+          "lyrics": "Thought I ran you out",
+          "chords": [
+            {
+              "at": 18,
+              "chord": "D"
+            }
+          ]
+        },
+        {
+          "lyrics": "When I said I'm broken",
+          "chords": [
+            {
+              "at": 16,
+              "chord": "G"
+            }
+          ]
+        },
+        {
+          "lyrics": "And you text back and said, \"I'll fix you\"",
+          "chords": [
+            {
+              "at": 13,
+              "chord": "Em"
+            }
+          ]
+        },
+        {
+          "lyrics": "Thought I ran you out",
+          "chords": [
+            {
+              "at": 18,
+              "chord": "D"
+            }
+          ]
+        },
+        {
+          "lyrics": "And I lost all hope",
+          "chords": [
+            {
+              "at": 15,
+              "chord": "G"
+            }
+          ]
+        },
+        {
+          "lyrics": "'Cause I don't feel broken when I'm with you",
+          "chords": [
+            {
+              "at": 20,
+              "chord": "Em"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pre-chorus 1",
+      "lines": [
+        {
+          "lyrics": "The internet done killed the radio [unclear]",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Em"
+            }
+          ]
+        },
+        {
+          "lyrics": "Ain't it all a drag?",
+          "chords": [
+            {
+              "at": 15,
+              "chord": "G"
+            }
+          ]
+        },
+        {
+          "lyrics": "Living off of nicotine and my phone",
+          "chords": [
+            {
+              "at": 14,
+              "chord": "Em"
+            }
+          ]
+        },
+        {
+          "lyrics": "Can I get a drag? ",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "D"
+            },
+            {
+              "at": 18,
+              "chord": "G"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Chorus 1",
+      "lines": [
+        {
+          "lyrics": "I don't wanna chat with GPT",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "D"
+            },
+            {
+              "at": 24,
+              "chord": "G"
+            }
+          ]
+        },
+        {
+          "lyrics": "Where the iPhone killed the MP3",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Em"
+            }
+          ]
+        },
+        {
+          "lyrics": "And there's no more Bam or MTV",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "D"
+            },
+            {
+              "at": 27,
+              "chord": "G"
+            }
+          ]
+        },
+        {
+          "lyrics": "Does anybody even know how to party?",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Em"
+            }
+          ]
+        },
+        {
+          "lyrics": "I just want a fast car, I'll pimp my ride",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "D"
+            },
+            {
+              "at": 37,
+              "chord": "G"
+            }
+          ]
+        },
+        {
+          "lyrics": "What the fuck's a Flock cam? I'd rather stay inside",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Em"
+            }
+          ]
+        },
+        {
+          "lyrics": "Now they're selling us weed and taxing our highs",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "D"
+            },
+            {
+              "at": 43,
+              "chord": "G"
+            }
+          ]
+        },
+        {
+          "lyrics": "They wanna take it back to where it all started",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Em"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Post-chorus 1",
+      "lines": [
+        {
+          "lyrics": "Got me singing, \"Hey, ho, let's go\"",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "D"
+            },
+            {
+              "at": 32,
+              "chord": "G"
+            }
+          ]
+        },
+        {
+          "lyrics": "Does anybody even know how to party?",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Em"
+            }
+          ]
+        },
+        {
+          "lyrics": "Got me singing, \"Hey, ho, let's go\"",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "D"
+            },
+            {
+              "at": 32,
+              "chord": "G"
+            }
+          ]
+        },
+        {
+          "lyrics": "Does anybody even know how to party?",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Em"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Verse 2",
+      "lines": [
+        {
+          "lyrics": "It was tight jeans, it was skateboards",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "D"
+            },
+            {
+              "at": 27,
+              "chord": "G"
+            }
+          ]
+        },
+        {
+          "lyrics": "It was street fights",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Em"
+            }
+          ]
+        },
+        {
+          "lyrics": "It was coming home before the streetlights",
+          "chords": []
+        },
+        {
+          "lyrics": "It was a pandemic [uncertain], it was following dreams",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "D"
+            },
+            {
+              "at": 48,
+              "chord": "G"
+            }
+          ]
+        },
+        {
+          "lyrics": "It was XXL, it was 2016",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Em"
+            }
+          ]
+        },
+        {
+          "lyrics": "But maybe I'm just aging",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "D"
+            }
+          ]
+        },
+        {
+          "lyrics": "Blame it on the phases",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "G"
+            }
+          ]
+        },
+        {
+          "lyrics": "Maybe time is funny",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Em"
+            }
+          ]
+        },
+        {
+          "lyrics": "And I've been going through changes",
+          "chords": [
+            {
+              "at": 28,
+              "chord": "D"
+            }
+          ]
+        },
+        {
+          "lyrics": "Or maybe it's the same shit",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "G"
+            }
+          ]
+        },
+        {
+          "lyrics": "'Cause the kids are on drugs and dangerous",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Em"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pre-chorus 2",
+      "lines": [
+        {
+          "lyrics": "The internet done killed the radio [unclear]",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Em"
+            }
+          ]
+        },
+        {
+          "lyrics": "Ain't it all a drag?",
+          "chords": [
+            {
+              "at": 15,
+              "chord": "G"
+            }
+          ]
+        },
+        {
+          "lyrics": "They're living off of nicotine and iPhones",
+          "chords": [
+            {
+              "at": 22,
+              "chord": "Em"
+            }
+          ]
+        },
+        {
+          "lyrics": "Can they get a drag? ",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "D"
+            },
+            {
+              "at": 21,
+              "chord": "G"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Chorus 2",
+      "lines": [
+        {
+          "lyrics": "I don't wanna chat with GPT",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "D"
+            },
+            {
+              "at": 24,
+              "chord": "G"
+            }
+          ]
+        },
+        {
+          "lyrics": "Where the iPhone killed the MP3",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Em"
+            }
+          ]
+        },
+        {
+          "lyrics": "And there's no more Bam or MTV",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "D"
+            },
+            {
+              "at": 27,
+              "chord": "G"
+            }
+          ]
+        },
+        {
+          "lyrics": "Does anybody even know how to party?",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Em"
+            }
+          ]
+        },
+        {
+          "lyrics": "I just want a fast car, I'll pimp my ride",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "D"
+            },
+            {
+              "at": 37,
+              "chord": "G"
+            }
+          ]
+        },
+        {
+          "lyrics": "What the fuck's a Flock cam? I'd rather stay inside",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Em"
+            }
+          ]
+        },
+        {
+          "lyrics": "Now they're selling us weed and taxing our highs",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "D"
+            },
+            {
+              "at": 43,
+              "chord": "G"
+            }
+          ]
+        },
+        {
+          "lyrics": "I wanna take it back to where it all started",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Em"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Post-chorus 2",
+      "lines": [
+        {
+          "lyrics": "Got me singing, \"Hey, ho, let's go\"",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "D"
+            },
+            {
+              "at": 32,
+              "chord": "G"
+            }
+          ]
+        },
+        {
+          "lyrics": "Does anybody even know how to party?",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Em"
+            }
+          ]
+        },
+        {
+          "lyrics": "Got me singing, \"Hey, ho, let's go\"",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "D"
+            },
+            {
+              "at": 32,
+              "chord": "G"
+            }
+          ]
+        },
+        {
+          "lyrics": "Does anybody even know how to party?",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Em"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Breakdown",
+      "lines": [
+        {
+          "lyrics": "I don't wanna chat with GPT",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Em"
+            }
+          ]
+        },
+        {
+          "lyrics": "The internet killed the radio",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "G"
+            }
+          ]
+        },
+        {
+          "lyrics": "The iPhone killed the MP3",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Em"
+            }
+          ]
+        },
+        {
+          "lyrics": "Does anybody even know how to party?",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "G"
+            },
+            {
+              "at": 18,
+              "chord": "D"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Final chorus",
+      "lines": [
+        {
+          "lyrics": "I don't wanna chat with GPT",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "D"
+            },
+            {
+              "at": 24,
+              "chord": "G"
+            }
+          ]
+        },
+        {
+          "lyrics": "Where the iPhone killed the MP3",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Em"
+            }
+          ]
+        },
+        {
+          "lyrics": "And there's no more Bam or MTV",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "D"
+            },
+            {
+              "at": 27,
+              "chord": "G"
+            }
+          ]
+        },
+        {
+          "lyrics": "Does anybody even know how to party?",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Em"
+            }
+          ]
+        },
+        {
+          "lyrics": "I just want a fast car, I'll pimp my ride",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "D"
+            },
+            {
+              "at": 37,
+              "chord": "G"
+            }
+          ]
+        },
+        {
+          "lyrics": "What the fuck's a Flock cam? I'd rather stay inside",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Em"
+            }
+          ]
+        },
+        {
+          "lyrics": "Now they're selling us weed and taxing our highs",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "D"
+            },
+            {
+              "at": 43,
+              "chord": "G"
+            }
+          ]
+        },
+        {
+          "lyrics": "I wanna take it back to where it all started",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Em"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Final post-chorus",
+      "lines": [
+        {
+          "lyrics": "Got me singing, \"Hey, ho, let's go\"",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "D"
+            },
+            {
+              "at": 32,
+              "chord": "G"
+            }
+          ]
+        },
+        {
+          "lyrics": "Does anybody even know how to party?",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Em"
+            }
+          ]
+        },
+        {
+          "lyrics": "Got me singing, \"Hey, ho, let's go\"",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "D"
+            },
+            {
+              "at": 32,
+              "chord": "G"
+            }
+          ]
+        },
+        {
+          "lyrics": "Does anybody even know how to party?",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Em"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Outro",
+      "lines": [
+        {
+          "lyrics": "",
+          "chords": [
+            {
+              "at": 0,
+              "chord": "Em"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
